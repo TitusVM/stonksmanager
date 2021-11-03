@@ -2,8 +2,16 @@ let $ = require('jquery')
 const ipc = require('electron').ipcRenderer;
 const { app } = require('electron');
 
-$('#btn-openCSV').on('click', () => {
-    ipc.send('open-CSV')
+$('#btn-openJSON').on('click', () => {
+    ipc.send('open-JSON')
+})
+
+$('#btn-billsManager').on('click', () => {
+    ipc.send('bills-manager')
+})
+
+$('#btn-generateStatement').on('click', () => {
+    // nothing yet
 })
 
 $('#btn-quit').on('click', () => {

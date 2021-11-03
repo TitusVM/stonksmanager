@@ -8,6 +8,7 @@ const { dialog } = require('electron')
 let mainWindow
 let loginScreen
 let budgetScreen
+let billsManagerScreen
 
 function createWindows() {
 
@@ -65,23 +66,58 @@ function createWindows() {
     loginScreen.setBackgroundColor('#00000000')
     //loginScreen.webContents.openDevTools({ mode: 'undocked' })
 
+    billsManagerScreen = new BrowserWindow({
+        parent: budgetScreen,
+        show: false,
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false,
+            enableRemoteModule: true,
+        }
+    })
+    billsManagerScreen.loadURL(url.format({
+        pathname: path.join(__dirname, 'billsManager.html'),
+        protocol: 'file',
+        slashes: true
+    }))
+
 }
 
 ipcMain.on('entry-accepted', (event, arg) => {
     if (arg == 'ping') {
         //mainWindow.show()
         budgetScreen.show()
-        loginScreen.hide()
+        loginScreen.close()
     }
 })
 
-ipcMain.on('close-me', (evt, arg) => {
+ipcMain.on('login_close-me', (evt, arg) => {
     app.quit()
 })
 
-ipcMain.on('open-CSV', (evt, arg) => {
-    //showDialog qui demande le CSV
-    dialog.showOpenDialog(budgetScreen, {properties: ['openFile']})
+ipcMain.on('open-JSON', (evt, arg) => {
+    //showDialog qui demande le JSON
+    dialog.showOpenDialog(budgetScreen, {
+        properties: ['openFile'], 
+        filters: [{
+            name: 'JSON', extensions: ['json']
+        }]
+    }).then(result => {
+        //console.log(result.canceled) => Did user cancel ? 
+        console.log(result.filePaths) // file path
+      }).catch(err => {
+        console.log(err) // avoid crashes
+      })
+})
+
+ipcMain.on('bills-manager', (evt, arg) => {
+    billsManagerScreen.show()
+    budgetScreen.hide()
+})
+
+ipcMain.on('billsManager_close-me', (evt, arg) => {
+    budgetScreen.show()
+    billsManagerScreen.hide()
 })
 
 app.on('ready', function () {
