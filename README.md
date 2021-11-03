@@ -9,3 +9,9 @@ followed by:
 `npm start`
 
 to start the app
+
+
+
+# Chartjs
+
+Extra branch for chartjs tests
