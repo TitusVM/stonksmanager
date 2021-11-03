@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="stylesheet.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container" style="border-radius: 5px; background-color: whitesmoke;">
+        <div style="display: inline-block; vertical-align: top; line-height: 1; ">
+            <img src="./src/logo_v2.svg" style="width: 53px; margin-right: 50px;" alt="">
+        </div>
+
+        <div style="display: inline-block; line-height: 1;">
+            <br />
+            <div class="form-group">
+                <label for="usr" style="color:black;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">User
+                    Name:</label>
+                <input type="text" class="form-control" id="txtUsr">
+            </div>
+            <div class="form-group">
+                <label for="pwd"
+                    style="color:black;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Password:</label>
+                <input type="password" class="form-control" id="txtPwd">
+            </div>
+            <button class=" btn btn-default" id="btn-login"
+                style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Login</button>
+            <label id="lbl" style="color:red;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"></label>
+            <button class="btn btn-default" id="btn-quit"
+                style="float: right; font-family: 'Segoe UI' , Tahoma,Geneva, Verdana, sans-serif;">Quit</button>
+        </div>
+    </div>
+    <script src=" loginScript.js"></script>
+</body>
+
+</html>
