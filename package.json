@@ -13,6 +13,7 @@
   "author": "pckurdu",
   "license": "ISC",
   "dependencies": {
+    "chart.js": "^3.6.0",
     "jquery": "^3.6.0"
   },
   "devDependencies": {
