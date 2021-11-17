@@ -1,15 +1,15 @@
 # StonksManager
 
-To run:
+*Install dependencies*:
+```
+npm install --save-dev electron
+npm install --save-dev python-shell
+```
 
-`npm install --save-dev electron`
-
-followed by:
-
-`npm start`
-
-to start the app
-
+*Run*:
+```
+npm start
+```
 
 
 # Chartjs

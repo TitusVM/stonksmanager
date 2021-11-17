@@ -2,6 +2,8 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 const url = require('url')
+var { PythonShell } = require('python-shell');
+const { truncate } = require('fs');
 
 
 let mainWindow
