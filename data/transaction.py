@@ -11,6 +11,9 @@ class Transaction:
     NECESSITY = 5
     OTHER = 6
 
+    def __getstate__(self):
+      return self.name
+
   def __init__(self, description: str, date: datetime, amount: Decimal,
                category: Category):
     self._description = description
@@ -29,9 +32,3 @@ class Transaction:
   @category.setter
   def category(self, category: Category):
     self._category = category
-  
-  def pay(self):
-    pass
-
-  def edit(self):
-    pass

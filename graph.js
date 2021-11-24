@@ -1,15 +1,6 @@
 $ = require("jquery");
 
-function ipcPython() {
-  var { PythonShell } = require("python-shell");
-  PythonShell.run("./data/graphs.py", {
-    args: "../test_data/decembre.json",
-    mode: "json"
-  }, function (err, results) {
-    if (err) throw err;
-    showGraph(results[0]);
-  });
-}
+pythonipc(showGraph, "graph", "../test_data/decembre.json");
 
 function showGraph(values) {
   const labels = Object.keys(values).map(
@@ -18,7 +9,6 @@ function showGraph(values) {
   const data = {
     labels: labels,
     datasets: [{
-      label: "My First dataset",
       backgroundColor: [
         "#ea5534",
         "#c7e260",
@@ -60,5 +50,3 @@ function showGraph(values) {
     config
   );
 }
-
-ipcPython();
