@@ -60,7 +60,7 @@ ipcMain.on('close-me', (evt, arg) => {
 })
 
 ipcMain.on('new-bill', (evt, arg) => {
-    let bill = new Bill("Loisir", "Ma première facture", "25.11.2021", 2500.00, false, "");
+    let bill = new Bill();
     bill.logTest();
 })
 
