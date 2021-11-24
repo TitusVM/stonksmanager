@@ -40,7 +40,7 @@ function loginKeyPress() {
 }
 
 function quitKeyPress() {
-    ipc.sendSync('login_close-me');
+    ipc.sendSync('close-me');
 }
 
 function enterKeyPressLogin(event) {

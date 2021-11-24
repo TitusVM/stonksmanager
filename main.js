@@ -28,7 +28,7 @@ function createWindows() {
 
     loginWindow = new BrowserWindow({
         parent: mainWindow,
-        width: 600,
+        width: 400,
         height: 320,
         transparent: true,
         frame: false,
@@ -67,16 +67,16 @@ ipcMain.on('new-bill', (evt, arg) => {
 ipcMain.on('open-JSON', (evt, arg) => {
     //showDialog qui demande le JSON
     dialog.showOpenDialog(mainWindow, {
-        properties: ['openFile'], 
+        properties: ['openFile'],
         filters: [{
             name: 'JSON', extensions: ['json']
         }]
     }).then(result => {
         //console.log(result.canceled) => Did user cancel ? 
         console.log(result.filePaths) // file path
-      }).catch(err => {
+    }).catch(err => {
         console.log(err) // avoid crashes
-      })
+    })
 })
 
 app.on('ready', function () {
