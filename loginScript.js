@@ -31,5 +31,5 @@ $('#btn-login').on('click', () => {
 })
 
 $('#btn-quit').on('click', () => {
-    ipc.send('login_close-me')
+    ipc.send('close-me')
 })

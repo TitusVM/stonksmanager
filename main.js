@@ -1,19 +1,16 @@
-
-const { app, BrowserWindow, ipcMain } = require('electron')
+const { app, BrowserWindow, ipcMain, dialog } = require('electron')
 const path = require('path')
 const url = require('url')
-const { dialog } = require('electron')
+var Bill = require('./bill')
 
 
 let mainWindow
-let loginScreen
-let budgetScreen
-let billsManagerScreen
+let loginWindow
 
 function createWindows() {
 
     mainWindow = new BrowserWindow({
-        width: 800,
+        width: 900,
         height: 600,
         show: false,
         webPreferences: {
@@ -24,28 +21,13 @@ function createWindows() {
     })
 
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'index.html'),
-        protocol: 'file',
-        slashes: true
-    }))
-
-    budgetScreen = new BrowserWindow({
-        show: false,
-        webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false,
-            enableRemoteModule: true,
-        }
-    })
-    budgetScreen.loadURL(url.format({
         pathname: path.join(__dirname, 'budget.html'),
         protocol: 'file',
         slashes: true
     }))
 
-    
-    loginScreen = new BrowserWindow({
-        parent: budgetScreen,
+    loginWindow = new BrowserWindow({
+        parent: mainWindow,
         width: 600,
         height: 320,
         transparent: true,
@@ -58,46 +40,33 @@ function createWindows() {
             enableRemoteModule: true,
         }
     })
-    loginScreen.loadURL(url.format({
+    loginWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'login.html'),
         protocol: 'file',
         slashes: true
     }))
-    loginScreen.setBackgroundColor('#00000000')
-    //loginScreen.webContents.openDevTools({ mode: 'undocked' })
-
-    billsManagerScreen = new BrowserWindow({
-        parent: budgetScreen,
-        show: false,
-        webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false,
-            enableRemoteModule: true,
-        }
-    })
-    billsManagerScreen.loadURL(url.format({
-        pathname: path.join(__dirname, 'billsManager.html'),
-        protocol: 'file',
-        slashes: true
-    }))
-
+    loginWindow.setBackgroundColor('#00000000')
 }
 
 ipcMain.on('entry-accepted', (event, arg) => {
     if (arg == 'ping') {
-        //mainWindow.show()
-        budgetScreen.show()
-        loginScreen.close()
+        mainWindow.show()
+        loginWindow.close()
     }
 })
 
-ipcMain.on('login_close-me', (evt, arg) => {
+ipcMain.on('close-me', (evt, arg) => {
     app.quit()
+})
+
+ipcMain.on('new-bill', (evt, arg) => {
+    let bill = new Bill("Loisir", "Ma première facture", "25.11.2021", 2500.00, false, "");
+    bill.logTest();
 })
 
 ipcMain.on('open-JSON', (evt, arg) => {
     //showDialog qui demande le JSON
-    dialog.showOpenDialog(budgetScreen, {
+    dialog.showOpenDialog(mainWindow, {
         properties: ['openFile'], 
         filters: [{
             name: 'JSON', extensions: ['json']
@@ -108,16 +77,6 @@ ipcMain.on('open-JSON', (evt, arg) => {
       }).catch(err => {
         console.log(err) // avoid crashes
       })
-})
-
-ipcMain.on('bills-manager', (evt, arg) => {
-    billsManagerScreen.show()
-    budgetScreen.hide()
-})
-
-ipcMain.on('billsManager_close-me', (evt, arg) => {
-    budgetScreen.show()
-    billsManagerScreen.hide()
 })
 
 app.on('ready', function () {
