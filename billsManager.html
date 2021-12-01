@@ -10,11 +10,22 @@
 
 </head>
 
-<body>
-    <div>
-        <button class="btn btn-default" onclick="window.location.href='budget.html'" style="font-family: 'Segoe UI' , Tahoma,Geneva, Verdana, sans-serif;">Retourner sur la page budget</button>
-        <button class="btn btn-default" id="btn-newBill" style="font-family: 'Segoe UI' , Tahoma,Geneva, Verdana, sans-serif;">Créer un objet facture</button>
-    </div>  
+<body">
+    <div style="display:flex;">
+        <div style="width:60vw;height:99.5vh;">
+            <div style="height:60%;border:1px;border-color:black;border-style: solid;border-bottom: 0px;border-left:0px;border-top:0px;">
+                <button class="btn btn-default" onclick="window.location.href='budget.html'" style="font-family: 'Segoe UI' , Tahoma,Geneva, Verdana, sans-serif;">Retourner sur la page budget</button>
+                <button class="btn btn-default" id="btn-newBill" style="font-family: 'Segoe UI' , Tahoma,Geneva, Verdana, sans-serif;">Créer un objet facture</button>
+            </div>  
+            <div style="height:40%;border:1px;border-color:black;border-style: solid;border-left:0px;border-bottom: 0px;">
+                <label>div en bas à gauche</label>
+            </div>
+        </div>
+        <div style="width:40vw;height:99.5vh;">
+            <label>div de droite</label>
+        </div>
+    </div>
+        
     <script src=" billsManagerScript.js"></script>
 </body>
 
