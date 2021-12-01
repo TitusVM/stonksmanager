@@ -1,6 +1,6 @@
 $ = require("jquery");
 
-pythonipc(showGraph, "graph", "../test_data/decembre.json");
+pythonipc(showGraph, "graph", "example_jsons/decembre.json");
 
 function showGraph(values) {
   const labels = Object.keys(values).map(

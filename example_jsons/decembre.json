@@ -1,0 +1,433 @@
+{
+  "json_type": "reply",
+  "statement": [
+    {
+      "issued_on": "01-12-2021",
+      "period_start": "01-12-2021",
+      "period_end": "31-12-2021",
+      "account_holder": "Stephen Bills",
+      "holder_address": "BahnhofStr. 2, 8001, Zürich",
+      "account_number": "12317469420",
+      "account_tag": "Debit",
+      "card_number": "4523745298603256",
+      "card_tag": "Visa"
+    },
+    {
+      "transactions": [
+        {
+          "date": "2021/12/01/06/19",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "5,60",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/01/14/26",
+          "type": "payment",
+          "beneficiary": "THEATRE",
+          "amount": "30,30",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/02/00/00",
+          "type": "payment",
+          "beneficiary": "AGENCE IMMOBILIERE",
+          "amount": "1500,00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/02/06/24",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "5,73",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/02/19/06",
+          "type": "payment",
+          "beneficiary": "MUSEE",
+          "amount": "32,79",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/03/06/21",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "5,27",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/03/10/57",
+          "type": "payment",
+          "beneficiary": "STATION ESSENCE",
+          "amount": "77,68",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/06/06/32",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "4,45",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/04/12/02",
+          "type": "payment",
+          "beneficiary": "MAGASIN",
+          "amount": "35,11",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/06/06/28",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "3,96",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/05/15/05",
+          "type": "payment",
+          "beneficiary": "MAGASIN",
+          "amount": "197,59",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/05/16/49",
+          "type": "payment",
+          "beneficiary": "STATION ESSENCE",
+          "amount": "43,34",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/06/06/11",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "2,85",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/07/06/39",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "2,89",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/07/11/56",
+          "type": "payment",
+          "beneficiary": "RESTAURANT",
+          "amount": "39,50",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/08/06/40",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "5,48",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/08/12/33",
+          "type": "payment",
+          "beneficiary": "SUPERMARCHE",
+          "amount": "185,47",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/09/06/17",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "3,40",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/09/10/07",
+          "type": "payment",
+          "beneficiary": "RESTAURANT",
+          "amount": "143,49",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/10/06/14",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "4,71",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/13/06/40",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "4,26",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/13/06/23",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "2,87",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/12/13/30",
+          "type": "payment",
+          "beneficiary": "MAGASIN JEUX",
+          "amount": "40,86",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/13/06/40",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "3,69",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/13/11/45",
+          "type": "payment",
+          "beneficiary": "MAGASIN",
+          "amount": "18,09",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/14/06/34",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "4,73",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/15/06/23",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "2,94",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/16/06/38",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "5,83",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/16/16/13",
+          "type": "payment",
+          "beneficiary": "SUPERMARCHE",
+          "amount": "42,00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/17/06/34",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "5,51",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/17/15/46",
+          "type": "payment",
+          "beneficiary": "RESTAURANT",
+          "amount": "41,88",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/20/06/31",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "3,63",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/18/21/36",
+          "type": "payment",
+          "beneficiary": "STATION ESSENCE",
+          "amount": "87,86",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/20/06/32",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "4,60",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/20/00/00",
+          "type": "payment",
+          "beneficiary": "ASSURANCE MOTO",
+          "amount": "420,00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/20/00/00",
+          "type": "payment",
+          "beneficiary": "ASSURANCE VOITURE",
+          "amount": "420,00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/20/06/15",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "3,55",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/20/17/57",
+          "type": "payment",
+          "beneficiary": "MUSEE",
+          "amount": "50,22",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/21/06/34",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "2,94",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/21/14/22",
+          "type": "payment",
+          "beneficiary": "MAGASIN ENLIGNE JEUXVIDEOS",
+          "amount": "52,36",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/21/15/17",
+          "type": "payment",
+          "beneficiary": "TICKET CFF",
+          "amount": "85,03",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/22/06/18",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "3,98",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/23/06/30",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "2,64",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/23/14/28",
+          "type": "payment",
+          "beneficiary": "MAGASIN ENLIGNE JEUXVIDEOS",
+          "amount": "42,63",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/23/18/45",
+          "type": "payment",
+          "beneficiary": "TICKET CFF",
+          "amount": "57,11",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/24/06/10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "2,97",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/24/11/34",
+          "type": "payment",
+          "beneficiary": "SUPERMARCHE",
+          "amount": "35,20",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/27/06/25",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "3,13",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/27/06/34",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "2,39",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/26/17/12",
+          "type": "payment",
+          "beneficiary": "MUSEE",
+          "amount": "54,03",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/27/06/36",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "3,94",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/28/06/26",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "5,42",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/29/06/36",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "5,63",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/30/06/19",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "2,39",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/30/10/29",
+          "type": "payment",
+          "beneficiary": "STATION ESSENCE",
+          "amount": "56,68",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/31/00/01",
+          "type": "payment",
+          "beneficiary": "ASSURANCE MALADIE",
+          "amount": "412,63",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/31/06/37",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "2,45",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/31/10/01",
+          "type": "payment",
+          "beneficiary": "TELECOM",
+          "amount": "68,23",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021/12/31/10/32",
+          "type": "credit",
+          "beneficiary": "TRAVAIL",
+          "amount": "6000,00",
+          "currency": "CHF"
+        }
+      ]
+    }
+  ]
+}

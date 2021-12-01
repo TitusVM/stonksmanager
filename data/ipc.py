@@ -1,6 +1,11 @@
 import os
 import jsonpickle
 
+jsonpickle.set_preferred_backend('simplejson')
+jsonpickle.set_decoder_options('simplejson',
+                               use_decimal=True)
+jsonpickle.set_preferred_backend('simplejson')
+
 def graph(filepath: str):
   from loading import load
   from graphs import generate_graph

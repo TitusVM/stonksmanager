@@ -1,0 +1,447 @@
+{
+  "json_type": "reply",
+  "statement": [
+    {
+      "issued_on": "01-12-2021",
+      "period_start": "01-12-2021",
+      "period_end": "31-12-2021",
+      "account_holder": "Stephen Bills",
+      "holder_address": "BahnhofStr. 2, 8001, Zürich",
+      "account_number": "12317469420",
+      "account_tag": "Debit",
+      "card_number": "4523745298603256",
+      "card_tag": "Visa"
+    },
+    {
+      "transactions": [
+        {
+          "date": "2021 May 1 10:30",
+          "type": "payment",
+          "beneficiary": "MAGASIN",
+          "amount": "62.35",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 1 20:30",
+          "type": "payment",
+          "beneficiary": "CINEMA",
+          "amount": "22.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 2 09:30",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "3.50",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 2 12:00",
+          "type": "payment",
+          "beneficiary": "RESTAURANT",
+          "amount": "45.90",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 3 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 3 17:40",
+          "type": "payment",
+          "beneficiary": "AGENCE IMMOBILIERE",
+          "amount": "1500.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 4 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 4 11:50",
+          "type": "payment",
+          "beneficiary": "RESTAURANT",
+          "amount": "12.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 5 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 5 13:50",
+          "type": "payment",
+          "beneficiary": "MAGASIN EN LIGNE JEUX VIDEOS",
+          "amount": "59.90",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 6 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 6 11:50",
+          "type": "payment",
+          "beneficiary": "RESTAURANT",
+          "amount": "12.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 7 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 7 19:30",
+          "type": "payment",
+          "beneficiary": "RESTAURANT",
+          "amount": "23.40",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 8 10:30",
+          "type": "payment",
+          "beneficiary": "MAGASIN",
+          "amount": "64.70",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 8 20:30",
+          "type": "payment",
+          "beneficiary": "CINEMA",
+          "amount": "19.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 9 09:30",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "4.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 9 12:10",
+          "type": "payment",
+          "beneficiary": "RESTAURANT",
+          "amount": "55.35",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 10 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 11 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 11 11:50",
+          "type": "payment",
+          "beneficiary": "RESTAURANT",
+          "amount": "12.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 12 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 12 11:50",
+          "type": "payment",
+          "beneficiary": "MAGASIN VETEMENTS",
+          "amount": "40.50",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 13 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 13 11:50",
+          "type": "payment",
+          "beneficiary": "RESTAURANT",
+          "amount": "12.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 14 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 14 19:30",
+          "type": "payment",
+          "beneficiary": "RESTAURANT",
+          "amount": "24.45",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 15 10:30",
+          "type": "payment",
+          "beneficiary": "MAGASIN",
+          "amount": "67.80",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 15 20:30",
+          "type": "payment",
+          "beneficiary": "CINEMA",
+          "amount": "22.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 16 09:30",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "3.50",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 16 12:00",
+          "type": "payment",
+          "beneficiary": "RESTAURANT",
+          "amount": "25.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 17 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 18 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 18 11:50",
+          "type": "payment",
+          "beneficiary": "RESTAURANT",
+          "amount": "12.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 19 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 19 11:50",
+          "type": "payment",
+          "beneficiary": "STATION SERVICE",
+          "amount": "39.80",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 20 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 20 11:50",
+          "type": "payment",
+          "beneficiary": "RESTAURANT",
+          "amount": "12.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 21 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 21 19:30",
+          "type": "payment",
+          "beneficiary": "RESTAURANT",
+          "amount": "19.90",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 22 10:30",
+          "type": "payment",
+          "beneficiary": "MAGASIN",
+          "amount": "59.85",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 22 20:30",
+          "type": "payment",
+          "beneficiary": "CINEMA",
+          "amount": "22.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 23 09:30",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "3.50",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 23 12:00",
+          "type": "payment",
+          "beneficiary": "RESTAURANT",
+          "amount": "29.90",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 24 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 25 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 25 11:50",
+          "type": "payment",
+          "beneficiary": "RESTAURANT",
+          "amount": "12.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 26 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 27 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 27 11:50",
+          "type": "payment",
+          "beneficiary": "RESTAURANT",
+          "amount": "12.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 28 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 28 16:00",
+          "type": "credit",
+          "creditor": "TRAVAIL",
+          "amount": "6000.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 28 19:30",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "42.30",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 29 10:30",
+          "type": "payment",
+          "beneficiary": "MAGASIN",
+          "amount": "57.45",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 29 18:10",
+          "type": "payment",
+          "beneficiary": "ASSURANCE IMMOBILIERE",
+          "amount": "212.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 29 18:12",
+          "type": "payment",
+          "beneficiary": "IMPOT NEUCHATEL",
+          "amount": "2300.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 30 09:30",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "3.50",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 31 08:10",
+          "type": "payment",
+          "beneficiary": "BOULANGERIE",
+          "amount": "6.00",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 31 17:00",
+          "type": "payment",
+          "beneficiary": "ASSURANCE MALADIE",
+          "amount": "412.65",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 31 17:15",
+          "type": "payment",
+          "beneficiary": "TELECOM",
+          "amount": "68.25",
+          "currency": "CHF"
+        },
+        {
+          "date": "2021 May 31 17:17",
+          "type": "payment",
+          "beneficiary": "ASSURANCE VOITURE",
+          "amount": "400.00",
+          "currency": "CHF"
+        }
+      ]
+    }
+  ]
+}

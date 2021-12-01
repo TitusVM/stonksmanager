@@ -5,6 +5,7 @@
 npm install --save-dev electron
 npm install --save-dev python-shell
 pip install jsonpickle
+pip install simplejson
 ```
 
 *Run*:
