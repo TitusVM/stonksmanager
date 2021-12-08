@@ -6,27 +6,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Bills Manager Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+        integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/electron-tabs.css">
 
 </head>
 
 <body">
     <div style="display:flex;">
         <div style="width:60vw;height:99.5vh;">
-            <div style="height:60%;border:1px;border-color:black;border-style: solid;border-bottom: 0px;border-left:0px;border-top:0px;">
-                <button class="btn btn-default" onclick="window.location.href='budget.html'" style="font-family: 'Segoe UI' , Tahoma,Geneva, Verdana, sans-serif;">Retourner sur la page budget</button>
-                <button class="btn btn-default" id="btn-newBill" style="font-family: 'Segoe UI' , Tahoma,Geneva, Verdana, sans-serif;">Créer un objet facture</button>
-            </div>  
-            <div style="height:40%;border:1px;border-color:black;border-style: solid;border-left:0px;border-bottom: 0px;">
+            <div
+                style="height:60%;border:1px;border-color:black;border-style: solid;border-bottom: 0px;border-left:0px;border-top:0px;">
+                <button class="btn btn-default" onclick="window.location.href='budget.html'"
+                    style="font-family: 'Segoe UI' , Tahoma,Geneva, Verdana, sans-serif;">Retourner sur la page
+                    budget</button>
+                <button class="btn btn-default" id="btn-newBill"
+                    style="font-family: 'Segoe UI' , Tahoma,Geneva, Verdana, sans-serif;">Créer un objet
+                    facture</button>
+            </div>
+            <div
+                style="height:40%;border:1px;border-color:black;border-style: solid;border-left:0px;border-bottom: 0px;">
                 <label>div en bas à gauche</label>
             </div>
         </div>
         <div style="width:40vw;height:99.5vh;">
-            <label>div de droite</label>
+            <div class="etabs-tabgroup">
+                <div class="etabs-tabs"></div>
+                <div class="etabs-buttons"></div>
+            </div>
+            <div class="etabs-views"></div>
+
+            <script>
+                //const TabGroup = require('electron-tabs') normally but for demo :
+                const TabGroup = require("./index");
+
+                let tabGroup = new TabGroup({
+                    newTab: {
+                        title: 'New Tab'
+                    }
+                });
+
+                tabGroup.addTab({
+                    title: 'Test html',
+                    src: './login.html',
+                });
+
+                tabGroup.addTab({
+                    title: "Electron",
+                    src: "http://electron.atom.io",
+                    visible: true,
+                    active: true,
+                });
+
+            </script>
         </div>
     </div>
-        
+
     <script src=" billsManagerScript.js"></script>
-</body>
+    </body>
 
 </html>

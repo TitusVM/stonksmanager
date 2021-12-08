@@ -16,6 +16,7 @@
     "jquery": "^3.6.0"
   },
   "devDependencies": {
-    "electron": "^15.3.2"
+    "electron": "^15.3.2",
+    "electron-tabs": "^0.15.0"
   }
 }

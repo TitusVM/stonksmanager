@@ -17,6 +17,7 @@ function createWindows() {
             nodeIntegration: true,
             contextIsolation: false,
             enableRemoteModule: true,
+            webviewTag: true
         }
     })
 
