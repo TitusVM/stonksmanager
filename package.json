@@ -13,10 +13,10 @@
   "author": "pckurdu",
   "license": "ISC",
   "dependencies": {
-    "chart.js": "^3.6.0",
     "jquery": "^3.6.0"
   },
   "devDependencies": {
+    "chart.js": "^3.6.1",
     "electron": "^15.3.3",
     "python-shell": "^3.0.1"
   }

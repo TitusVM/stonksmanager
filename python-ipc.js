@@ -4,7 +4,7 @@
  * @param {string} func The Python function to call.
  * @param {string|string[]} args Arguments to pass to the Python function.
  */
-function pythonipc(callback, func, args="") {
+export function pythonipc(callback, func, args="") {
   var { PythonShell } = require("python-shell");
 
   if (typeof(args) === "string") {

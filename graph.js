@@ -1,4 +1,5 @@
-$ = require("jquery");
+const Chart = require("chart.js").Chart;
+import { pythonipc } from './python-ipc.js';
 
 pythonipc(showGraph, "graph", "example_jsons/decembre.json");
 
@@ -45,8 +46,5 @@ function showGraph(values) {
     }
   };
 
-  const myChartJs = new Chart(
-    document.getElementById("myChart"),
-    config
-  );
+  new Chart(document.getElementById("myChart"), config);
 }
