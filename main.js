@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, dialog } = require('electron')
+const { app, BrowserWindow, ipcMain, dialog, ipcRenderer } = require('electron')
 const path = require('path')
 const url = require('url')
 var { PythonShell } = require('python-shell');
@@ -75,8 +75,11 @@ ipcMain.on('open-JSON', (evt, arg) => {
             name: 'JSON', extensions: ['json']
         }]
     }).then(result => {
-        //console.log(result.canceled) => Did user cancel ? 
-        console.log(result.filePaths) // file path
+        if (result.canceled) {
+            evt.returnValue = null;
+        } else {
+            evt.returnValue = result.filePaths[0];
+        }
     }).catch(err => {
         console.log(err) // avoid crashes
     })
