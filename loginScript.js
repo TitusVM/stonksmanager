@@ -23,8 +23,8 @@ function loginKeyPress() {
 
         data.forEach((authorities, index) => {
             let [user, password] = authorities.split(',');
-            let [name1, usr] = user.split(':');
-            let [name2, pass] = password.split(':');
+            let usr = user.split(':')[1].trim();
+            let pass = password.split(':')[1].trim();
 
             let txtUser = $('#txtUsr').val();
             let txtPwd = $('#txtPwd').val();
