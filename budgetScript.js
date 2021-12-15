@@ -61,4 +61,5 @@ function showGraph(values) {
   };
 
   new Chart(document.getElementById("myChart"), config);
+  $(".table").removeAttr("hidden");
 }

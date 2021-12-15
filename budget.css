@@ -1,3 +1,85 @@
 * {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+
+.table {
+  background-color: #4a575e;
+  color: #ffffff;
+}
+
+.table td:last-child, .table th:last-child {
+  text-align: right;
+}
+
+.table td, .table th {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-left: 2px;
+}
+
+.table th {
+  text-align: left;
+  color: #999a9a;
+  padding-top: 15px;
+  border-bottom: 1px solid #999a9a;
+  font-weight: bold;
+}
+
+.table tr:last-child td {
+  border-top: 1px solid #999a9a;
+}
+
+.table tr:last-child td:nth-child(2) {
+  color: #999a9a;
+  font-weight: bold;
+}
+
+.table tr:last-child td:nth-child(3) {
+  font-size: 1.3em;
+}
+
+.color-housing {
+  color: #ea5534;
+}
+
+.color-food {
+  color: #c7e260;
+}
+
+.color-transport {
+  color: #74a7c8;
+}
+
+.color-leisure {
+  color: #ebe795;
+}
+
+.color-necessity {
+  color: #f4af4a;
+}
+
+.color-other {
+  color: #d40e0e;
+}
+
+.bills-panel {
+  border-left: 2px solid black;
+  min-width: 150px;
+}
+
+.bills-panel img {
+  padding-top: 20vh;
+}
+
+.bills-panel * {
+  width: 70%;
+  margin-left: 15%;
+  text-overflow: ellipsis;
+}
+
+.graphs {
+  display: flex;
+  justify-content: space-around;
+}
