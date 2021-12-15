@@ -1,7 +1,5 @@
 var http = require("http");
-var jsdom = require("jsdom");
-var window = jsdom.jsdom().defaultView;
-var $ = require('jquery')(window);
+var $ = require('jquery');
 
 let Bill = require('./bill.js')
 const { app } = require('electron');

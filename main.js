@@ -4,7 +4,7 @@ const url = require('url')
 var { PythonShell } = require('python-shell');
 const { truncate } = require('fs');
 var Bill = require('./bill');
-var BillTab = require('./billsTabScirpt');
+var BillTab = require('./billsTabScript');
 
 
 let mainWindow
