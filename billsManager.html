@@ -34,11 +34,11 @@
                 <div class="etabs-tabs"></div>
                 <div class="etabs-buttons"></div>
             </div>
-            <div class="etabs-views"></div>
+            <div class="etabs-views" id="tabs"></div>
 
             <script>
                 //const TabGroup = require('electron-tabs') normally but for demo :
-                const TabGroup = require("./index");
+                const TabGroup = require("./tabIndex");
 
                 let tabGroup = new TabGroup({
                     newTab: {
@@ -48,14 +48,14 @@
 
                 tabGroup.addTab({
                     title: 'Test html',
-                    src: './login.html',
+                    src: './billsTab.html',
+                    visible: true,
+                    active: true,
                 });
 
                 tabGroup.addTab({
                     title: "Electron",
                     src: "http://electron.atom.io",
-                    visible: true,
-                    active: true,
                 });
 
             </script>

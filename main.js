@@ -3,7 +3,8 @@ const path = require('path')
 const url = require('url')
 var { PythonShell } = require('python-shell');
 const { truncate } = require('fs');
-var Bill = require('./bill')
+var Bill = require('./bill');
+var BillTab = require('./billsTabScirpt');
 
 
 let mainWindow
@@ -64,7 +65,10 @@ ipcMain.on('close-me', (evt, arg) => {
 
 ipcMain.on('new-bill', (evt, arg) => {
     let bill = new Bill();
-    bill.logTest();
+    let billTab = new BillTab(bill)
+    bill.logTest()
+    billTab.printDiv()
+    billTab.logTest()
 })
 
 ipcMain.on('open-JSON', (evt, arg) => {
