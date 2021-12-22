@@ -15,18 +15,43 @@
 <body">
     <div style="display:flex;">
         <div style="width:60vw;height:99.5vh;">
-            <div
-                style="height:60%;border:1px;border-color:black;border-style: solid;border-bottom: 0px;border-left:0px;border-top:0px;">
+            <div style="height:60%;border:1px;border-color:black;border-style: solid;border-bottom: 0px;border-left:0px;border-top:0px;">
                 <button class="btn btn-default" onclick="window.location.href='budget.html'"
                     style="font-family: 'Segoe UI' , Tahoma,Geneva, Verdana, sans-serif;">Retourner sur la page
                     budget</button>
-                <button class="btn btn-default" id="btn-newBill"
-                    style="font-family: 'Segoe UI' , Tahoma,Geneva, Verdana, sans-serif;">Créer un objet
-                    facture</button>
+                
+                <form>
+                    <label for="categories">Choose a category:</label>
+                    <select name="categories" id="categories">
+                        <option value="Housing">Housing</option>
+                        <option value="Food">Food</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="Leisure">Leisure</option>
+                        <option value="Necessity">Necessity</option>
+                    </select><br>
+                    <label for="name">Name</label>
+                    <input type="text" id="txt-name" name="name" placeholder="Nom" required><br>
+                    <label for="date">Billing deadline</label>
+                    <input type="date" id="dt-date" name="date" required><br>
+                    <label for="value">Value</label>
+                    <input type="number" id="nb-value" name="value" value="0" min="0" required><br>
+                    <input type="checkbox" id="cbx-monthly" name="monthly">
+                    <label for="monthly">Monthly</label>
+                    <input type="submit" id="btn-newBill" name="addNewBill" value="Add bill">
+                </form>
+                
             </div>
             <div
                 style="height:40%;border:1px;border-color:black;border-style: solid;border-left:0px;border-bottom: 0px;">
-                <label>div en bas à gauche</label>
+                <label>Bill's informations</label><br>
+
+                <input type="text" id="txt-showName" name="showName" placeholder="Nom">
+                <input type="text" id="txt-showCategory" name="showCategory" placeholder="Category"><br>
+                <input type="text" id="txt-showDate" name="showDate" placeholder="Date">
+                <input type="checkbox" id="cbx-showMonthly" name="showMonthly">
+                <label for="showMonthly">Monthly</label><br>
+                <input type="text" id="txt-showValue" name="showValue" placeholder="Value">
+                <input type="button" id="btn-paid" name="paid" value="Paid">
             </div>
         </div>
         <div style="width:40vw;height:99.5vh;">

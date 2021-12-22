@@ -62,8 +62,8 @@ ipcMain.on('close-me', (evt, arg) => {
     app.quit()
 })
 
-ipcMain.on('new-bill', (evt, arg) => {
-    let bill = new Bill();
+ipcMain.on('new-bill', (evt, category, name, date, value, monthly) => {
+    let bill = new Bill(category, name, date, value, monthly);
     bill.logTest();
 })
 
