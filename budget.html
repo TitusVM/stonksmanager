@@ -2,31 +2,81 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Budget Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
-        integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
-
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Budget Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+    integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./budget.css" />
 </head>
 
-<body style="background: #555; color: black;">
-    <div>
-        <button class="btn btn-default" id="btn-openJSON"
-            style="font-family: 'Segoe UI' , Tahoma,Geneva, Verdana, sans-serif;">Ouvrir le fichier JSON</button>
-        <button class="btn btn-default" onclick="window.location.href='billsManager.html'"
-            style="font-family: 'Segoe UI' , Tahoma,Geneva, Verdana, sans-serif;">Ouvrir le gestionnaire de
-            factures</button>
-        <button class="btn btn-default" id="btn-generateStatement"
-            style="font-family: 'Segoe UI' , Tahoma,Geneva, Verdana, sans-serif;">générer le relevé bancaire</button>
-    </div>
-    <div style="width: 50%;">
-        <canvas id="myChart"></canvas>
+<body>
+  <div style="display:flex;">
+    <div style="width:85vw;height:99.5vh;">
+      <h1>Informations sur les gains et sur les dépenses</h1>
+      <button class="btn btn-default" id="btn-openJSON">Ouvrir le fichier JSON</button>
+
+      <div class="graphs">
+
+        <table class="table" cellspacing="0" cellpadding="0" hidden>
+          <tr>
+            <th></th>
+            <th>Category</th>
+            <th>Spending</th>
+          </tr>
+          <tr>
+            <td class="color-housing">•</td>
+            <td>Housing</td>
+            <td>$6,000.00</td>
+          </tr>
+          <tr>
+            <td class="color-food">•</td>
+            <td>Food</td>
+            <td>$3,000.00</td>
+          </tr>
+          <tr>
+            <td class="color-transport">•</td>
+            <td>Transportation</td>
+            <td>$1,7500.00</td>
+          </tr>
+          <tr>
+            <td class="color-leisure">•</td>
+            <td>Leisure</td>
+            <td>$1,200.00</td>
+          </tr>
+          <tr>
+            <td class="color-necessity">•</td>
+            <td>Necessity</td>
+            <td>$1,200.00</td>
+          </tr>
+          <tr>
+            <td class="color-other">•</td>
+            <td>Other</td>
+            <td>$5,000.00</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Total</td>
+            <td>$13,150.00</td>
+          </tr>
+        </table>
+
+        <div style="width: 50%;">
+          <canvas id="myChart"></canvas>
+        </div>
+
+      </div>
     </div>
 
-    <script type="module" src="graph.js"></script>
-    <script src="budgetScript.js"></script>
+    <div style="width:15vw;height:99.5vh;" class="bills-panel">
+      <img src="bill-placeholder.PNG" />
+      <button class="btn btn-default" onclick="window.location.href='billsManager.html'">Ouvrir le gestionnaire de
+        factures</button>
+    </div>
+  </div>
+
+  <script type="module" src="budgetScript.js"></script>
 </body>
 
 </html>
