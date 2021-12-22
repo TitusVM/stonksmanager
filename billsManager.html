@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
         integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
-    <link rel="stylesheet" href="./src/electron-tabs.css">
+    <link rel="stylesheet" href="./src/stylesheet-tabs.css">
 
 </head>
 
@@ -54,39 +54,23 @@
                 <input type="button" id="btn-paid" name="paid" value="Paid">
             </div>
         </div>
-        <div style="width:40vw;height:99.5vh;">
-            <div class="etabs-tabgroup">
-                <div class="etabs-tabs"></div>
-                <div class="etabs-buttons"></div>
+        <div style=" width:40vw; height:99.5vh; background-color: grey;">
+            <div class="wrapper">
+                <button id="tab-button-1" class="button active" style="
+                    float: left; font-size: 80%; width: 48%; height: 100%; margin-left:1%;"
+                    onclick="tab1press();">First
+                    tab</button>
+                <button id="tab-button-2" class="button" style="
+                    float: right; font-size: 80%; width: 48%; height: 100%; margin-right:1%;"
+                    onclick="tab2press();">Second
+                    tab</button>
             </div>
-            <div class="etabs-views"></div>
-
-            <script>
-                //const TabGroup = require('electron-tabs') normally but for demo :
-                const TabGroup = require("./index");
-
-                let tabGroup = new TabGroup({
-                    newTab: {
-                        title: 'New Tab'
-                    }
-                });
-
-                tabGroup.addTab({
-                    title: 'Test html',
-                    src: './login.html',
-                });
-
-                tabGroup.addTab({
-                    title: "Electron",
-                    src: "http://electron.atom.io",
-                    visible: true,
-                    active: true,
-                });
-
-            </script>
+            <div id="bill-view" class="tab-window">
+                <div id="par1">This is paragraph 1</div>
+                <div id="par2" style="visibility: hidden;">This is paragraph 2</div>
+            </div>
         </div>
     </div>
-
     <script src=" billsManagerScript.js"></script>
     </body>
 

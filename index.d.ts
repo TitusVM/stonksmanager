@@ -1,5 +1,5 @@
-import {EventEmitter} from 'events';
-import {WebviewTag} from 'electron';
+import { EventEmitter } from 'events';
+import { WebviewTag } from 'electron';
 
 declare class ElectronTabs extends EventEmitter {
   constructor(options?: ElectronTabs.TabGroupOptions);
@@ -36,7 +36,7 @@ declare namespace ElectronTabs {
     iconURL?: string;
     icon?: string;
     closable?: boolean;
-    webviewAttributes?: {[key: string]: any};
+    webviewAttributes?: { [key: string]: any };
     visible?: boolean;
     active?: boolean;
     ready?: (tab: Tab) => void;

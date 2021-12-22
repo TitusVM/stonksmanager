@@ -3,7 +3,7 @@ const path = require('path')
 const url = require('url')
 var { PythonShell } = require('python-shell');
 const { truncate } = require('fs');
-var Bill = require('./bill')
+var Bill = require('./bill');
 
 
 let mainWindow
