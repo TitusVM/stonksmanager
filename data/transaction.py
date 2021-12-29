@@ -32,3 +32,7 @@ class Transaction:
   @category.setter
   def category(self, category: Category):
     self._category = category
+
+  @property
+  def date(self):
+    return self._date

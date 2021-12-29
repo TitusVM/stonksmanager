@@ -2,19 +2,34 @@ import { pythonipc } from './python-ipc.js';
 const Chart = require("chart.js").Chart;
 let $ = require('jquery');
 const ipc = require('electron').ipcRenderer;
+let jsonPath;
 
 $('#btn-openJSON').on('click', () => {
-  let result = ipc.sendSync('open-JSON');
-  if (result != null) {
+   jsonPath = ipc.sendSync('open-JSON');
+   let timespan = document.getElementById("timespan").value;
+  if (jsonPath != null) {
     pythonipc((r) => {
       $("#btn-openJSON").remove();
       showGraph(r);
-    }, "graph", result);
+    }, "graph", [jsonPath, timespan]);
   }
 });
 
 $('#btn-generateStatement').on('click', () => {
   // nothing yet
+});
+
+$('#timespan').on('change', () => {
+  $('#myChart').remove();
+  $('#chartContainer').append('<canvas id="myChart"><canvas>');
+
+  let timespan = document.getElementById("timespan").value;
+
+  if (jsonPath != null) {
+    pythonipc((r) => {
+      showGraph(r);
+    }, "graph", [jsonPath, timespan]);
+  }
 });
 
 function showGraph(values) {
@@ -61,5 +76,5 @@ function showGraph(values) {
   };
 
   new Chart(document.getElementById("myChart"), config);
-  $(".table").removeAttr("hidden");
+  $(".graphs").removeAttr("hidden");
 }

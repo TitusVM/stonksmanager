@@ -6,6 +6,7 @@
 .table {
   background-color: #4a575e;
   color: #ffffff;
+  margin-bottom: 1em;
 }
 
 .table td:last-child, .table th:last-child {
@@ -82,4 +83,8 @@
 .graphs {
   display: flex;
   justify-content: space-around;
+}
+
+.dpy-block {
+  display: block;
 }

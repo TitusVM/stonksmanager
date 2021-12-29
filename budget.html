@@ -17,52 +17,63 @@
       <h1>Informations sur les gains et sur les dépenses</h1>
       <button class="btn btn-default" id="btn-openJSON">Ouvrir le fichier JSON</button>
 
-      <div class="graphs">
+      <div class="graphs" hidden>
 
-        <table class="table" cellspacing="0" cellpadding="0" hidden>
-          <tr>
-            <th></th>
-            <th>Category</th>
-            <th>Spending</th>
-          </tr>
-          <tr>
-            <td class="color-housing">•</td>
-            <td>Housing</td>
-            <td>$6,000.00</td>
-          </tr>
-          <tr>
-            <td class="color-food">•</td>
-            <td>Food</td>
-            <td>$3,000.00</td>
-          </tr>
-          <tr>
-            <td class="color-transport">•</td>
-            <td>Transportation</td>
-            <td>$1,7500.00</td>
-          </tr>
-          <tr>
-            <td class="color-leisure">•</td>
-            <td>Leisure</td>
-            <td>$1,200.00</td>
-          </tr>
-          <tr>
-            <td class="color-necessity">•</td>
-            <td>Necessity</td>
-            <td>$1,200.00</td>
-          </tr>
-          <tr>
-            <td class="color-other">•</td>
-            <td>Other</td>
-            <td>$5,000.00</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>Total</td>
-            <td>$13,150.00</td>
-          </tr>
-        </table>
+        <div class="left-column">
+          <table class="table" cellspacing="0" cellpadding="0">
+            <tr>
+              <th></th>
+              <th>Category</th>
+              <th>Spending</th>
+            </tr>
+            <tr>
+              <td class="color-housing">•</td>
+              <td>Housing</td>
+              <td>$6,000.00</td>
+            </tr>
+            <tr>
+              <td class="color-food">•</td>
+              <td>Food</td>
+              <td>$3,000.00</td>
+            </tr>
+            <tr>
+              <td class="color-transport">•</td>
+              <td>Transportation</td>
+              <td>$1,7500.00</td>
+            </tr>
+            <tr>
+              <td class="color-leisure">•</td>
+              <td>Leisure</td>
+              <td>$1,200.00</td>
+            </tr>
+            <tr>
+              <td class="color-necessity">•</td>
+              <td>Necessity</td>
+              <td>$1,200.00</td>
+            </tr>
+            <tr>
+              <td class="color-other">•</td>
+              <td>Other</td>
+              <td>$5,000.00</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Total</td>
+              <td>$13,150.00</td>
+            </tr>
+          </table>
 
-        <div style="width: 50%;">
+          <label for="timespan" class="dpy-block">Afficher jusqu'à il y a:</label>
+          <select name="timespan" id="timespan">
+            <option value="day">1 jour</option>
+            <option value="month" selected>1 mois</option>
+            <option value="6month">6 mois</option>
+            <option value="year">1 an</option>
+            <option value="all">Depuis le début</option>
+          </select>
+        </div>
+
+        <div id="chartContainer" style="width: 50%;">
           <canvas id="myChart"></canvas>
         </div>
 
