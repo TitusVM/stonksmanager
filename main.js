@@ -1,13 +1,15 @@
-const { app, BrowserWindow, ipcMain, dialog, ipcRenderer } = require('electron')
-const path = require('path')
-const url = require('url')
+const { app, BrowserWindow, ipcMain, dialog, ipcRenderer } = require('electron');
+const path = require('path');
+const url = require('url');
 var { PythonShell } = require('python-shell');
 const { truncate } = require('fs');
 var Bill = require('./bill');
 
 
-let mainWindow
-let loginWindow
+let mainWindow;
+let loginWindow;
+
+let username;
 
 function createWindows() {
 
@@ -21,13 +23,7 @@ function createWindows() {
             enableRemoteModule: true,
             webviewTag: true
         }
-    })
-
-    mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'budget.html'),
-        protocol: 'file',
-        slashes: true
-    }))
+    });
 
     loginWindow = new BrowserWindow({
         parent: mainWindow,
@@ -42,33 +38,46 @@ function createWindows() {
             contextIsolation: false,
             enableRemoteModule: true,
         }
-    })
+    });
+
     loginWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'login.html'),
         protocol: 'file',
         slashes: true
-    }))
-    loginWindow.setBackgroundColor('#00000000')
+    }));
+
+    loginWindow.setBackgroundColor('#00000000');
 }
 
-ipcMain.on('entry-accepted', (event, arg) => {
-    if (arg == 'ping') {
-        mainWindow.show()
-        loginWindow.close()
-    }
-})
+/* User logged in */
+ipcMain.on('entry-accepted', (e, name) => {
+    username = name;
+    mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'budget.html'),
+        protocol: 'file',
+        slashes: true
+    }));
+    mainWindow.show();
+    loginWindow.close();
+});
 
+ipcMain.on('get-username', (e, a) => {
+    e.returnValue = username;
+});
+
+/* Quit from login */
 ipcMain.on('close-me', (evt, arg) => {
-    app.quit()
-})
+    app.quit();
+});
 
+/* On new bill from bill manager */
 ipcMain.on('new-bill', (evt, category, name, date, value, monthly) => {
     let bill = new Bill(category, name, date, value, monthly);
     bill.logTest();
-})
+});
 
+/* Open the file dialog to select a json file */
 ipcMain.on('open-JSON', (evt, arg) => {
-    //showDialog qui demande le JSON
     dialog.showOpenDialog(mainWindow, {
         properties: ['openFile'],
         filters: [{
@@ -82,12 +91,11 @@ ipcMain.on('open-JSON', (evt, arg) => {
         }
     }).catch(err => {
         console.log(err) // avoid crashes
-    })
-})
+    });
+});
 
 app.on('ready', function () {
     setTimeout(function () {
         createWindows();
     }, 300);
 });
-

@@ -1,23 +1,68 @@
+import datetime
 import os
-import jsonpickle
+import simplejson as json
+import transaction
 
-jsonpickle.set_preferred_backend('simplejson')
-jsonpickle.set_decoder_options('simplejson',
-                               use_decimal=True)
-jsonpickle.set_preferred_backend('simplejson')
+from graphs import generate_graph
+from loading import load_raw_data, load_bills
+from save import save_bills
 
-def graph(filepath: str):
-  from loading import load
-  from graphs import generate_graph
-  print(jsonpickle.encode(generate_graph(load(filepath)), unpicklable=False, use_decimal=True))
 
-def transacs(filepath: str):
-  from loading import load
-  print(jsonpickle.encode(load(filepath), unpicklable=False, use_decimal=True))
+def send(obj: list):
+  print(json.dumps(obj, use_decimal=True, namedtuple_as_object=True))
 
-if __name__ == "__main__":
-  func = os.sys.argv[1]
-  if func == "graph":
-    graph(os.sys.argv[2])
-  elif func == "transacs":
-    transacs(os.sys.argv[2])
+def read():
+  return json.loads(input(), use_decimal=True)
+
+def help():
+  print('Available commands: graph transacs bills')
+
+argc = len(os.sys.argv) - 1
+def arg(n: int) -> str:
+  return os.sys.argv[n]
+
+if __name__ == '__main__':
+  if argc < 1:
+    help()
+    exit(-1)
+
+  func = arg(1)
+
+  if func == 'graph':
+    if argc < 2:
+      print('Usage: graph <user>')
+      exit(-1)
+
+    user = arg(2)
+    send(generate_graph(load_bills(user)))
+
+  elif func == 'transacs':
+    if argc < 2:
+      print('Usage: transacs <filename>')
+      exit(-1)
+
+    filepath = arg(2)
+    send(load_raw_data(filepath))
+
+  elif func == 'bills':
+    if argc < 3:
+      print('Usage: bills <load|save> <user>')
+      exit(-1)
+
+    verb = arg(2)
+    user = arg(3)
+
+    if verb == 'load':
+      send(load_bills(user))
+
+    elif verb == 'save':
+      save_bills(user, read())
+
+      pass
+
+    else:
+      print('Usage: bills <load|save> <user>')
+
+  else:
+    help()
+    exit(-1)

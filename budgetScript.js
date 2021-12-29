@@ -3,19 +3,12 @@ const Chart = require("chart.js").Chart;
 let $ = require('jquery');
 const ipc = require('electron').ipcRenderer;
 
-$('#btn-openJSON').on('click', () => {
-  let result = ipc.sendSync('open-JSON');
-  if (result != null) {
-    pythonipc((r) => {
-      $("#btn-openJSON").remove();
-      showGraph(r);
-    }, "graph", result);
-  }
-});
 
-$('#btn-generateStatement').on('click', () => {
-  // nothing yet
-});
+let username = ipc.sendSync('get-username');
+pythonipc((r) => {
+  $("#btn-openJSON").remove();
+  showGraph(r);
+}, "graph", username);
 
 function showGraph(values) {
   const labels = Object.keys(values).map(

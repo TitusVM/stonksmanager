@@ -4,7 +4,7 @@
  * @param {string} func The Python function to call.
  * @param {string|string[]} args Arguments to pass to the Python function.
  */
-export function pythonipc(callback, func, args="") {
+export function pythonipc(callback, func, args="", message="") {
   var { PythonShell } = require("python-shell");
 
   if (typeof(args) === "string") {
@@ -12,12 +12,15 @@ export function pythonipc(callback, func, args="") {
   } else {
     args = [func].concat(args);
   }
-  
-  PythonShell.run("./data/ipc.py", {
+
+  let shell = new PythonShell("./data/ipc.py", {
     args: args,
     mode: "json"
-  }, function (err, results) {
-    if (err) throw err;
-    callback(results[0]);
   });
+
+  shell.on("message", function (result) {
+    callback(result);
+  });
+
+  shell.send(message);
 }
