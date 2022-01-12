@@ -19,3 +19,8 @@
 .invisible {
   display: none;
 }
+
+#bill-view {
+  height: 95%;
+  overflow-y: auto;
+}
