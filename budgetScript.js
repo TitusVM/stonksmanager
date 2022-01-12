@@ -18,23 +18,35 @@ $('#timespan').on('change', () => {
   }, "graph", [username, timespan]);
 });
 
+const categoryTranslator_fr = {
+  "HOUSING": "Habitation",
+  "FOOD": "Nourriture",
+  "TRANSPORTATION": "Transports",
+  "LEISURE": "Loisirs",
+  "NECESSITY": "Nécessités",
+  "OTHER": "Autre"
+};
+
+const categoryTranslator = categoryTranslator_fr;
+
 function showGraph(values) {
-  const labels = Object.keys(values).map(
-      el => el.charAt(0).toUpperCase() + el.slice(1).toLowerCase());
+  /* const labels = Object.keys(values).map(
+      el => el.charAt(0).toUpperCase() + el.slice(1).toLowerCase()); */
+  const categories = Object.keys(values);
 
   var i = 1, sum = 0;
-  labels.forEach((l) => {
+  categories.forEach((c) => {
     let row = $(".table tbody").children().eq(i++).children();
-    let amount = values[l.toUpperCase()];
+    let amount = values[c];
 
-    row.eq(1).text(l);
+    row.eq(1).text(categoryTranslator[c]);
     row.eq(2).text(formatMoney(amount));
     sum += amount;
   });
   $(".table tbody").children().last().children().eq(2).text(formatMoney(sum));
 
   const data = {
-    labels: labels,
+    labels: categories.map(c => categoryTranslator[c]),
     datasets: [{
       backgroundColor: [
         "#ea5534",
