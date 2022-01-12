@@ -190,3 +190,21 @@ pythonipc(function(res) {
     "load",
     username
 ]);
+
+$("#btn-import").on("click", function() {
+    let filepath = ipc.sendSync("open-JSON");
+    if (!filepath) {
+        alert("Impossible d'ouvrir le fichier.");
+        return;
+    }
+
+    pythonipc(function(loadedjson) {
+        console.log("Loaded bills from bank file: " + filepath);
+        Bill.arrayFromJson(loadedjson).forEach(function(b) {
+            bills.push(b);
+        });
+        console.log(bills);
+        populateLists(bills);
+        pythonipc(function(){}, "bills", ["save", username], billsToJson(bills));
+    }, "transacs", filepath);
+});

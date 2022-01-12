@@ -17,10 +17,11 @@
     <div style="display:flex;">
         <div style="width:60vw;height:99.5vh;">
             <div style="height:60%;border:1px;border-color:black;border-style: solid;border-bottom: 0px;border-left:0px;border-top:0px;">
-                <button class="btn btn-default" onclick="window.location.href='budget.html'"
-                    style="font-family: 'Segoe UI' , Tahoma,Geneva, Verdana, sans-serif;">Retourner sur la page
-                    budget</button>
-                
+                <button class="btn btn-default top-button"
+                        onclick="window.location.href='budget.html'">Retourner sur la page budget</button>
+                <button class="btn btn-default top-button" id="btn-import">
+                    Importer un relevé bancaire
+                </button>
                 <div>
                     <label for="categories">Catégorie:</label>
                     <select name="categories" id="categories">
