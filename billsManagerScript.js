@@ -23,13 +23,19 @@ let tab2button = $("#tab-button-2");
 
 $('#btn-newBill').on('click', () => {
     let bill = new Bill(
-        "",
+        $("#categories").val(),
         $("#txt-name").val(),
-        $("#dt-date").val(),
-        $("#nb-value").val(),
+        new Date($("#dt-date").val()),
+        $("#nb-value").val() * -1,
         $("#cbx-monthly")[0].checked
     );
     bill.logTest();
+    bills.push(bill);
+    populateLists(bills);
+
+    let json = billsToJson(bills);
+    console.log(json);
+    pythonipc(function(){}, "bills", ["save", username], json);
 });
 
 function tab1press() {
@@ -120,7 +126,7 @@ function populateLists(bills) {
         if (bill.date < Date.now()) {
             tab2.append(billButton);
         } else {
-            tab2.append(billButton);
+            tab1.append(billButton);
         }
     });
 
