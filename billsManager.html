@@ -29,6 +29,7 @@
                         <option value="TRANSPORTATION">Transports</option>
                         <option value="LEISURE">Loisirs</option>
                         <option value="NECESSITY">Nécessités</option>
+                        <option value="OTHER">Autre</option>
                     </select><br>
                     <label for="name">Description</label>
                     <input type="text" id="txt-name" name="name" placeholder="Nom" required><br>
@@ -47,7 +48,14 @@
                 <label>Facture sélectionnée</label><br>
 
                 <input type="text" id="txt-showName" placeholder="Nom">
-                <input type="text" id="txt-showCategory" placeholder="Catégorie"><br>
+                <select id="txt-showCategory">
+                    <option value="HOUSING">Habitation</option>
+                    <option value="FOOD">Nourriture</option>
+                    <option value="TRANSPORTATION">Transports</option>
+                    <option value="LEISURE">Loisirs</option>
+                    <option value="NECESSITY">Nécessités</option>
+                    <option value="OTHER">Autre</option>
+                </select><br>
                 <input type="date" id="txt-showDate" placeholder="Date limite">
                 <input type="checkbox" id="cbx-showMonthly">
                 <label for="showMonthly">Chaque mois</label><br>

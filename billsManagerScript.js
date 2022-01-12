@@ -15,6 +15,7 @@ let bills = [];
  * @type {Bill}
  */
 let selectedBill = null;
+let selectedButton = null;
 let tab1 = $("#par1");
 let tab2 = $("#par2");
 let tab1button = $("#tab-button-1");
@@ -101,7 +102,7 @@ function valToDate(val) {
 /**
  * @param {Bill} bill 
  */
-function showInfos(bill) {
+function showInfos(bill, t) {
     $("#txt-showName").val(bill.name);
     $("#txt-showCategory").val(bill.category);
     $("#txt-showDate").val(dateToVal(bill.date));
@@ -109,6 +110,11 @@ function showInfos(bill) {
     $("#txt-showValue").val(bill.value * -1);
     $("#btn-savechanges").removeAttr("disabled");
     selectedBill = bill;
+    if (selectedButton) {
+        selectedButton.removeClass("selected");
+    }
+    selectedButton = $(t);
+    selectedButton.addClass("selected");
 }
 
 /**
@@ -117,12 +123,18 @@ function showInfos(bill) {
 function populateLists(bills) {
     tab1.empty();
     tab2.empty();
+    $("#btn-savechanges").attr("disabled", "");
+    $("#txt-showName").val("");
+    $("#txt-showCategory").val("");
+    $("#txt-showDate").val("");
+    $("#cbx-showMonthly")[0].checked = false;
+    $("#txt-showValue").val(0);
 
     bills.forEach(function(bill) {
         let billButton = $("<button>");
         billButton.text(bill.name);
         billButton.on("click", function() {
-            showInfos(bill);
+            showInfos(bill, this);
         });
 
         if (bill.date < Date.now()) {
@@ -165,9 +177,8 @@ $("#btn-savechanges").on("click", function() {
     selectedBill.date = valToDate($("#txt-showDate").val());
     selectedBill.monthly = $("#cbx-showMonthly")[0].checked;
     selectedBill.value = $("#txt-showValue").val() * -1;
-    $("#btn-savechanges").attr("disabled", "");
     console.log("Saving changes...");
-    pythonipc(function(_){}, "bills", ["save", username], billsToJson(bills));
+    pythonipc(function(){}, "bills", ["save", username], billsToJson(bills));
     populateLists(bills);
 });
 

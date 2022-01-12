@@ -24,3 +24,8 @@
   height: 95%;
   overflow-y: auto;
 }
+
+.selected {
+  background-color: rgb(40, 107, 207);
+  color: white;
+}

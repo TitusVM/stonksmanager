@@ -80,6 +80,11 @@ function showGraph(values) {
   };
 
   new Chart(document.getElementById("myChart"), config);
+  if (sum == 0) {
+    $("#chartContainer").attr("hidden", "");
+  } else {
+    $("#chartContainer").removeAttr("hidden");
+  }
 }
 
 function formatMoney(amount) {
