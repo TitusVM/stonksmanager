@@ -7,7 +7,14 @@ var Tab1Pressed = true;
 var Tab2Pressed = false;
 
 let username = ipc.sendSync('get-username');
+/**
+ * @type {Bill[]}
+ */
 let bills = [];
+/**
+ * @type {Bill}
+ */
+let selectedBill = null;
 let tab1 = $("#par1");
 let tab2 = $("#par2");
 let tab1button = $("#tab-button-1");
@@ -60,16 +67,27 @@ tab2button.on("click", tab2press);
  * @param {Date} date 
  */
 function dateToVal(date) {
-    let val = date.getFullYear() + "-";
-    if (date.getMonth() < 10) {
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    let val = year + "-";
+    if (month < 10) {
         val += "0";
     }
-    val += date.getMonth() + "-";
-    if (date.getDay() < 10) {
+    val += month + "-";
+    if (day < 10) {
         val += "0";
     }
-    val += date.getDay();
+    val += day;
     return val;
+}
+
+/**
+ * @param {string} val
+ */
+function valToDate(val) {
+    return new Date(val);
 }
 
 /**
@@ -81,6 +99,8 @@ function showInfos(bill) {
     $("#txt-showDate").val(dateToVal(bill.date));
     $("#cbx-showMonthly")[0].checked = bill.monthly;
     $("#txt-showValue").val(bill.value * -1);
+    $("#btn-savechanges").removeAttr("disabled");
+    selectedBill = bill;
 }
 
 /**
@@ -112,6 +132,36 @@ function populateLists(bills) {
         tab2button.trigger("click");
     }
 }
+
+/**
+ * @param {Bill[]} bills
+ */
+function billsToJson(bills) {
+    let json = [];
+    bills.forEach(function(b) {
+        const obj = {
+            "description": b.name,
+            "date": b.date.toISOString().split("Z")[0],
+            "amount": b.value,
+            "category": b.category,
+            "is_monthly": b.monthly
+        };
+        json.push(obj);
+    });
+    return json;
+}
+
+$("#btn-savechanges").on("click", function() {
+    selectedBill.name = $("#txt-showName").val();
+    selectedBill.category = $("#txt-showCategory").val();
+    selectedBill.date = valToDate($("#txt-showDate").val());
+    selectedBill.monthly = $("#cbx-showMonthly")[0].checked;
+    selectedBill.value = $("#txt-showValue").val() * -1;
+    $("#btn-savechanges").attr("disabled", "");
+    console.log("Saving changes...");
+    pythonipc(function(_){}, "bills", ["save", username], billsToJson(bills));
+    populateLists(bills);
+});
 
 pythonipc(function(res) {
     bills = Bill.arrayFromJson(res);

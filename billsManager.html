@@ -46,13 +46,14 @@
                 style="height:40%;border:1px;border-color:black;border-style: solid;border-left:0px;border-bottom: 0px;">
                 <label>Facture sélectionnée</label><br>
 
-                <input type="text" id="txt-showName" name="showName" placeholder="Nom">
-                <input type="text" id="txt-showCategory" name="showCategory" placeholder="Catégorie"><br>
-                <input type="date" id="txt-showDate" name="showDate" placeholder="Date limite">
-                <input type="checkbox" id="cbx-showMonthly" name="showMonthly">
+                <input type="text" id="txt-showName" placeholder="Nom">
+                <input type="text" id="txt-showCategory" placeholder="Catégorie"><br>
+                <input type="date" id="txt-showDate" placeholder="Date limite">
+                <input type="checkbox" id="cbx-showMonthly">
                 <label for="showMonthly">Chaque mois</label><br>
-                <input type="text" id="txt-showValue" name="showValue" placeholder="Montant">
-                <input type="button" id="btn-paid" name="paid" value="Payée">
+                <input type="text" id="txt-showValue" placeholder="Montant">
+                <input type="button" id="btn-paid" value="Payée" hidden>
+                <input type="button" id="btn-savechanges" value="Sauvegarder" disabled>
             </div>
         </div>
         <div style=" width:40vw; height:99.5vh; background-color: grey;">
