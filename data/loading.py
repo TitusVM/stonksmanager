@@ -1,8 +1,11 @@
-from typing import List
-import json
-from decimal import Decimal
+import os
+import simplejson as json
+
 from datetime import datetime
+from decimal import Decimal
 from transaction import Transaction
+from typing import List
+
 
 HOUSING_KEYWORDS = ["immo", "estate", "loyer", "landi", "conforama", "ikea", "lipo", "otto", "swisscom", "sunrise", "upc", "video", "tele", "comm", "wingo", "yallo", "salt", "lyca", "lebara"]
 FOOD_KEYWORDS = ["migros", "coop", "denner", "lidl", "aldi", "manor", "globus", "aligro", "volg", "spar", "avec", "kiosk", "selecta", "boulan", "restaurant", "marche", "marché"]
@@ -30,7 +33,7 @@ def detect_category(description: str):
   return Transaction.Category.OTHER
 
 def load_example_data(filepath: str) -> List[Transaction]:
-  data = json.load(open(filepath))
+  data = json.load(open(filepath, "r"))
   json_transactions = data["statement"][1]["transactions"]
   transactions: List[Transaction] = []
   for t in json_transactions:
@@ -58,5 +61,30 @@ def load_example_data(filepath: str) -> List[Transaction]:
 
   return transactions
 
-def load(filepath: str) -> List[Transaction]:
+def load_bills(user: str) -> List[Transaction]:
+  path = "example_jsons/"  # TODO: change this (and in save.py)
+  filepath = os.path.join(path, "bills_" + user + ".json")
+  if not os.path.exists(filepath):
+    return []
+
+  data = json.load(open(filepath, "r"), use_decimal=True)
+  transactions: List[Transaction] = []
+
+  for t in data:
+    date = datetime.fromisoformat(t["date"])
+    description = t["description"]
+    amount = t["amount"]
+    category = Transaction.Category[t["category"]]
+    is_monthly = t["is_monthly"]
+
+    transactions.append(Transaction(
+      description,
+      date,
+      amount,
+      category,
+      is_monthly))
+  
+  return transactions
+
+def load_raw_data(filepath: str) -> List[Transaction]:
   return load_example_data(filepath)

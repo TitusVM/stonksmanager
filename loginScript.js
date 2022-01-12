@@ -30,7 +30,7 @@ function loginKeyPress() {
             let txtPwd = $('#txtPwd').val();
 
             if (txtUser == usr && txtPwd == pass) {
-                ipc.sendSync('entry-accepted', 'ping');
+                ipc.sendSync('entry-accepted', usr);
             }
             else {
                 $('#lbl').text('username or password is incorrect');
