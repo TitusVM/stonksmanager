@@ -5,14 +5,22 @@ const ipc = require('electron').ipcRenderer;
 
 
 let username = ipc.sendSync('get-username');
-pythonipc((r) => {
-  $("#btn-openJSON").remove();
-  showGraph(r);
-}, "graph", username);
+pythonipc(showGraph, "graph", username);
 
 function showGraph(values) {
   const labels = Object.keys(values).map(
       el => el.charAt(0).toUpperCase() + el.slice(1).toLowerCase());
+
+  var i = 1, sum = 0;
+  labels.forEach((l) => {
+    let row = $(".table tbody").children().eq(i++).children();
+    let amount = values[l.toUpperCase()];
+
+    row.eq(1).text(l);
+    row.eq(2).text(formatMoney(amount));
+    sum += amount;
+  });
+  $(".table tbody").children().last().children().eq(2).text(formatMoney(sum));
 
   const data = {
     labels: labels,
@@ -37,15 +45,10 @@ function showGraph(values) {
         tooltip: {
           callbacks: {
             label: function (context) {
-              var label = context.label;
-              var chf;
-              if (context.parsed == Math.round(context.parsed)) {
-                chf = context.parsed + ".-";
-              } else {
-                chf = context.parsed;
-              }
+              let label = context.label;
+              let chf = formatMoney(context.parsed);
 
-              return label + ": " + chf + " CHF";
+              return label + ": " + chf;
             }
           }
         }
@@ -54,5 +57,15 @@ function showGraph(values) {
   };
 
   new Chart(document.getElementById("myChart"), config);
-  $(".table").removeAttr("hidden");
+}
+
+function formatMoney(amount) {
+  var chf;
+  if (amount == Math.round(amount)) {
+    chf = amount + ".-";
+  } else {
+    chf = amount;
+  }
+
+  return amount + " CHF";
 }

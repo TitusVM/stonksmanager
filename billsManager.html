@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
         integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     <link rel="stylesheet" href="./src/stylesheet-tabs.css">
+    <link rel="stylesheet" href="./billsManager.css">
 
 </head>
 
@@ -20,7 +21,7 @@
                     style="font-family: 'Segoe UI' , Tahoma,Geneva, Verdana, sans-serif;">Retourner sur la page
                     budget</button>
                 
-                <form>
+                <div>
                     <label for="categories">Choose a category:</label>
                     <select name="categories" id="categories">
                         <option value="Housing">Housing</option>
@@ -32,13 +33,13 @@
                     <label for="name">Name</label>
                     <input type="text" id="txt-name" name="name" placeholder="Nom" required><br>
                     <label for="date">Billing deadline</label>
-                    <input type="date" id="dt-date" name="date" required><br>
+                    <input type="date" id="dt-date" name="date" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><br>
                     <label for="value">Value</label>
                     <input type="number" id="nb-value" name="value" value="0" min="0" required><br>
                     <input type="checkbox" id="cbx-monthly" name="monthly">
                     <label for="monthly">Monthly</label>
                     <input type="submit" id="btn-newBill" name="addNewBill" value="Add bill">
-                </form>
+                </div>
                 
             </div>
             <div
@@ -47,7 +48,7 @@
 
                 <input type="text" id="txt-showName" name="showName" placeholder="Nom">
                 <input type="text" id="txt-showCategory" name="showCategory" placeholder="Category"><br>
-                <input type="text" id="txt-showDate" name="showDate" placeholder="Date">
+                <input type="date" id="txt-showDate" name="showDate" placeholder="Date">
                 <input type="checkbox" id="cbx-showMonthly" name="showMonthly">
                 <label for="showMonthly">Monthly</label><br>
                 <input type="text" id="txt-showValue" name="showValue" placeholder="Value">
@@ -58,20 +59,20 @@
             <div class="wrapper">
                 <button id="tab-button-1" class="button active" style="
                     float: left; font-size: 80%; width: 48%; height: 100%; margin-left:1%;"
-                    onclick="tab1press();">First
-                    tab</button>
+                    >Factures à payer</button>
                 <button id="tab-button-2" class="button" style="
                     float: right; font-size: 80%; width: 48%; height: 100%; margin-right:1%;"
-                    onclick="tab2press();">Second
-                    tab</button>
+                    >Historique de factures</button>
             </div>
             <div id="bill-view" class="tab-window">
-                <div id="par1">This is paragraph 1</div>
-                <div id="par2" style="visibility: hidden;">This is paragraph 2</div>
+                <div id="par1" class="billsList">
+                </div>
+                <div id="par2" class="billsList invisible">
+                </div>
             </div>
         </div>
     </div>
-    <script src=" billsManagerScript.js"></script>
+    <script type="module" src="billsManagerScript.js"></script>
     </body>
 
 </html>

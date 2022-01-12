@@ -3,8 +3,6 @@ const path = require('path');
 const url = require('url');
 var { PythonShell } = require('python-shell');
 const { truncate } = require('fs');
-var Bill = require('./bill');
-
 
 let mainWindow;
 let loginWindow;
@@ -68,12 +66,6 @@ ipcMain.on('get-username', (e, a) => {
 /* Quit from login */
 ipcMain.on('close-me', (evt, arg) => {
     app.quit();
-});
-
-/* On new bill from bill manager */
-ipcMain.on('new-bill', (evt, category, name, date, value, monthly) => {
-    let bill = new Bill(category, name, date, value, monthly);
-    bill.logTest();
 });
 
 /* Open the file dialog to select a json file */
