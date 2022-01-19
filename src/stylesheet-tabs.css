@@ -1,6 +1,6 @@
 .tab-window {
   display: block;
-  background-color: #e6e6e6;
+  background-color: grey;
   border: none transparent;
   margin-top: 0%;
   margin-bottom: 1%;
@@ -21,9 +21,8 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background-color: rgb(121, 121, 121);
-  color: balck;
+  color: black;
   border: none;
-
 }
 
 #bill-view {

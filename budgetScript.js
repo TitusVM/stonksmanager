@@ -65,6 +65,11 @@ function showGraph(values) {
     data: data,
     options: {
       plugins: {
+        legend: {
+          labels: {
+            color: "white"
+          }
+        },
         tooltip: {
           callbacks: {
             label: function (context) {
@@ -74,7 +79,7 @@ function showGraph(values) {
               return label + ": " + chf;
             }
           }
-        }
+        },
       }
     }
   };

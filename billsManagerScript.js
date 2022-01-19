@@ -18,6 +18,7 @@ let selectedBill = null;
 let selectedButton = null;
 let tab1 = $("#par1");
 let tab2 = $("#par2");
+let btnPaid = $("#btn-paid");
 let tab1button = $("#tab-button-1");
 let tab2button = $("#tab-button-2");
 
@@ -37,14 +38,23 @@ $('#btn-newBill').on('click', () => {
 
         let json = billsToJson(bills);
         console.log(json);
-        pythonipc(function(){}, "bills", ["save", username], json);
+        pythonipc(function () { }, "bills", ["save", username], json);
     }
+});
+
+$('#btn-paid').on('click', () => {
+    selectedBill.paid = true;
+
+    console.log("Bill paid...");
+    pythonipc(function (_) { }, "bills", ["save", username], billsToJson(bills));
+    populateLists(bills);
 });
 
 function tab1press() {
     if (!Tab1Pressed) {
         tab1button.toggleClass("active");
         tab2button.toggleClass("active");
+        btnPaid.removeAttr("disabled");
 
         // Hide whole page
         tab1.removeClass("invisible");
@@ -59,6 +69,7 @@ function tab2press() {
     if (!Tab2Pressed) {
         tab1button.toggleClass("active");
         tab2button.toggleClass("active");
+        btnPaid.attr("disabled", "");
 
         // Hide whole page
         tab1.addClass("invisible");
@@ -130,14 +141,14 @@ function populateLists(bills) {
     $("#cbx-showMonthly")[0].checked = false;
     $("#txt-showValue").val(0);
 
-    bills.forEach(function(bill) {
-        let billButton = $("<button>");
+    bills.forEach(function (bill) {
+        let billButton = $("<button class=\"pure-button \">");
         billButton.text(bill.name);
-        billButton.on("click", function() {
+        billButton.on("click", function () {
             showInfos(bill, this);
         });
 
-        if (bill.date < Date.now()) {
+        if (bill.paid) {
             tab2.append(billButton);
         } else {
             tab1.append(billButton);
@@ -145,10 +156,10 @@ function populateLists(bills) {
     });
 
     if (tab2.children().length == 0) {
-        tab2.append("<p>Rien à afficher...</p>");
+        tab2.append("<p style=\"color:white;\">Rien à afficher...</p>");
     }
     if (tab1.children().length == 0) {
-        tab1.append("<p>Rien à afficher...</p>");
+        tab1.append("<p style=\"color:white;\">Rien à afficher...</p>");
         tab2button.trigger("click");
     }
 }
@@ -158,7 +169,7 @@ function populateLists(bills) {
  */
 function billsToJson(bills) {
     let json = [];
-    bills.forEach(function(b) {
+    bills.forEach(function (b) {
         const obj = {
             "description": b.name,
             "date": b.date.toISOString().split("Z")[0],
@@ -171,18 +182,18 @@ function billsToJson(bills) {
     return json;
 }
 
-$("#btn-savechanges").on("click", function() {
+$("#btn-savechanges").on("click", function () {
     selectedBill.name = $("#txt-showName").val();
     selectedBill.category = $("#txt-showCategory").val();
     selectedBill.date = valToDate($("#txt-showDate").val());
     selectedBill.monthly = $("#cbx-showMonthly")[0].checked;
     selectedBill.value = $("#txt-showValue").val() * -1;
     console.log("Saving changes...");
-    pythonipc(function(){}, "bills", ["save", username], billsToJson(bills));
+    pythonipc(function () { }, "bills", ["save", username], billsToJson(bills));
     populateLists(bills);
 });
 
-pythonipc(function(res) {
+pythonipc(function (res) {
     bills = Bill.arrayFromJson(res);
     console.log("Loaded bills for " + username);
     populateLists(bills);
@@ -191,20 +202,20 @@ pythonipc(function(res) {
     username
 ]);
 
-$("#btn-import").on("click", function() {
+$("#btn-import").on("click", function () {
     let filepath = ipc.sendSync("open-JSON");
     if (!filepath) {
         alert("Impossible d'ouvrir le fichier.");
         return;
     }
 
-    pythonipc(function(loadedjson) {
+    pythonipc(function (loadedjson) {
         console.log("Loaded bills from bank file: " + filepath);
-        Bill.arrayFromJson(loadedjson).forEach(function(b) {
+        Bill.arrayFromJson(loadedjson).forEach(function (b) {
             bills.push(b);
         });
         console.log(bills);
         populateLists(bills);
-        pythonipc(function(){}, "bills", ["save", username], billsToJson(bills));
+        pythonipc(function () { }, "bills", ["save", username], billsToJson(bills));
     }, "transacs", filepath);
 });
