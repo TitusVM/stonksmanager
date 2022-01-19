@@ -12,9 +12,10 @@ let username;
 function createWindows() {
 
     mainWindow = new BrowserWindow({
-        width: 900,
-        height: 600,
+        minWidth: 1200,
+        minHeight: 720,
         show: false,
+        autoHideMenuBar: true,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,

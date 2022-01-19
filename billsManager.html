@@ -4,75 +4,111 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Factures</title>
+    <title>Bills Manager Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
         integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
     <link rel="stylesheet" href="./src/stylesheet-tabs.css">
-    <link rel="stylesheet" href="./billsManager.css">
-
+    <link rel="stylesheet" href="./src/billsManager.css">
 </head>
 
-<body">
-    <div style="display:flex;">
-        <div style="width:60vw;height:99.5vh;">
-            <div style="height:60%;border:1px;border-color:black;border-style: solid;border-bottom: 0px;border-left:0px;border-top:0px;">
-                <button class="btn btn-default top-button"
-                        onclick="window.location.href='budget.html'">Retourner sur la page budget</button>
-                <button class="btn btn-default top-button" id="btn-import">
-                    Importer un relevé bancaire
-                </button>
-                <div>
-                    <label for="categories">Catégorie:</label>
-                    <select name="categories" id="categories">
-                        <option value="HOUSING">Habitation</option>
-                        <option value="FOOD">Nourriture</option>
-                        <option value="TRANSPORTATION">Transports</option>
-                        <option value="LEISURE">Loisirs</option>
-                        <option value="NECESSITY">Nécessités</option>
-                        <option value="OTHER">Autre</option>
-                    </select><br>
-                    <label for="name">Description</label>
-                    <input type="text" id="txt-name" name="name" placeholder="Nom" required><br>
-                    <label for="date">Date limite</label>
-                    <input type="date" id="dt-date" name="date" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"><br>
-                    <label for="value">Montant</label>
-                    <input type="number" id="nb-value" name="value" value="0" min="0" required><br>
-                    <input type="checkbox" id="cbx-monthly" name="monthly">
-                    <label for="monthly">Chaque mois</label>
-                    <input type="submit" id="btn-newBill" name="addNewBill" value="Ajouter">
-                </div>
-                
-            </div>
-            <div
-                style="height:40%;border:1px;border-color:black;border-style: solid;border-left:0px;border-bottom: 0px;">
-                <label>Facture sélectionnée</label><br>
 
-                <input type="text" id="txt-showName" placeholder="Nom">
-                <select id="txt-showCategory">
-                    <option value="HOUSING">Habitation</option>
-                    <option value="FOOD">Nourriture</option>
-                    <option value="TRANSPORTATION">Transports</option>
-                    <option value="LEISURE">Loisirs</option>
-                    <option value="NECESSITY">Nécessités</option>
-                    <option value="OTHER">Autre</option>
-                </select><br>
-                <input type="date" id="txt-showDate" placeholder="Date limite">
-                <input type="checkbox" id="cbx-showMonthly">
-                <label for="showMonthly">Chaque mois</label><br>
-                <input type="text" id="txt-showValue" placeholder="Montant">
-                <input type="button" id="btn-paid" value="Payée" hidden>
-                <input type="button" id="btn-savechanges" value="Sauvegarder" disabled>
+<body style="background-color: #1A2933; color: white;">
+    <div style="margin: 5px;">
+        <button class="pure-button" style="font-size: large;" onclick="window.location.href='budget.html'">←</button>
+        <button class="pure-button pure-button-primary" id="btn-import">
+            Importer un relevé bancaire
+        </button>
+    </div>
+    <div class=" pure-g" style="height:90vh;">
+        <div class="pure-u-md-1-2" style="height:100%;">
+            <div class="pure-u-md-1" style="height:50%;">
+                <form class="pure-form pure-form-stacked" style="margin:10px;">
+                    <fieldset>
+                        <legend style="color: lightgrey;">Générer une nouvelle facture</legend>
+                        <div class="pure-g">
+                            <div class="pure-u-1 pure-u-md-1-2">
+                                <label for="categories">Catégorie</label>
+                                <select name="categories" id="categories">
+                                    <option value="HOUSING">Habitation</option>
+                                    <option value="FOOD">Nourriture</option>
+                                    <option value="TRANSPORTATION">Transports</option>
+                                    <option value="LEISURE">Loisirs</option>
+                                    <option value="NECESSITY">Nécessités</option>
+                                    <option value="OTHER">Autre</option>
+                                </select>
+                                <label for="name">Description</label>
+                                <input type="text" id="txt-name" name="name" placeholder="Description" required>
+                            </div>
+                            <div class="pure-u-1 pure-u-md-1-2">
+                                <label for="date">Date limite</label>
+                                <input type="date" id="dt-date" name="date" required
+                                    pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}">
+                                <label for=" value">Montant</label>
+                                <input type="number" id="nb-value" name="value" min="0" required>
+                            </div>
+                            <div class="pure-u-1 pure-u-md-1-2">
+                                <label for="cbx-monthly" class="pure-checkbox">
+                                    <input type="checkbox" id="cbx-monthly" /> Mensuelle
+                                </label>
+                                <button class="pure-button pure-button-primary" type="submit" id="btn-newBill"
+                                    name="addNewBill"> Add bill
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="pure-u-md-1" style="height:50%;">
+                <form class=" pure-form pure-form-stacked" style="margin:10px;">
+                    <fieldset id="champ-modif">
+                        <!--TODO: enable le fieldset si une facture est sélectionnée-->
+                        <legend style="color: lightgrey;">Facture sélectionnée</legend>
+                        <div class="pure-g">
+                            <div class="pure-u-1 pure-u-md-1-2">
+                                <label for="txt-showName">Description</label>
+                                <input type="text" id="txt-showName" name="showName" placeholder="Description">
+                            </div>
+                            <div class="pure-u-1 pure-u-md-1-2">
+                                <label for="txt-showDate">Échéance</label>
+                                <input type="date" id="txt-showDate" name="date" required>
+                            </div>
+                            <div class="pure-u-1 pure-u-md-1-2">
+                                <label for=" value">Montant</label>
+                                <input type="number" id="txt-showValue" name="value" min="1" step="any" required
+                                    placeholder="Montant">
+                            </div>
+                            <div class="pure-u-1 pure-u-md-1-2">
+                                <label for="categories">Catégorie</label>
+                                <select name="categories" id="txt-showCategory">
+                                    <option value="HOUSING">Habitation</option>
+                                    <option value="FOOD">Nourriture</option>
+                                    <option value="TRANSPORTATION">Transports</option>
+                                    <option value="LEISURE">Loisirs</option>
+                                    <option value="NECESSITY">Nécessités</option>
+                                    <option value="OTHER">Autre</option>
+                                </select>
+                            </div>
+                        </div>
+                        <label for="cbx-showMonthly" class="pure-checkbox">
+                            <input type="checkbox" id="cbx-showMonthly" /> Mensuelle
+                        </label>
+                        <button id="btn-paid" class="pure-button pure-button-secondary"
+                            disabled="disabled">Payée</button>
+                        <button id="btn-savechanges" class="pure-button pure-button-primary"
+                            disabled="disabled">Sauvegarder</button>
+                    </fieldset>
+                </form>
             </div>
         </div>
-        <div style=" width:40vw; height:99.5vh; background-color: grey;">
+        <div class="pure-u-md-1-2" style=" width:50%; height:90vh;">
             <div class="wrapper">
                 <button id="tab-button-1" class="button active" style="
-                    float: left; font-size: 80%; width: 48%; height: 100%; margin-left:1%;"
-                    >Factures à payer</button>
+                float: left; font-size: 80%; width: 48%; height: 100%; margin-left:1%;">Factures à payer</button>
                 <button id="tab-button-2" class="button" style="
-                    float: right; font-size: 80%; width: 48%; height: 100%; margin-right:1%;"
-                    >Historique de factures</button>
+                float: right; font-size: 80%; width: 48%; height: 100%; margin-right:1%;">Historique de
+                    factures</button>
             </div>
             <div id="bill-view" class="tab-window">
                 <div id="par1" class="billsList">
@@ -83,6 +119,6 @@
         </div>
     </div>
     <script type="module" src="billsManagerScript.js"></script>
-    </body>
+</body>
 
 </html>

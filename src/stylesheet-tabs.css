@@ -20,10 +20,15 @@
   width: 150px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  background-color: rgb(64, 64, 64);
+  background-color: rgb(121, 121, 121);
   color: balck;
   border: none;
 
+}
+
+#bill-view {
+  height: 95%;
+  overflow-y: none;
 }
 
 .active{

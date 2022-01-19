@@ -8,10 +8,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
     integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous" />
-  <link rel="stylesheet" href="./budget.css" />
+  <link rel="stylesheet" href="./src/budget.css" />
 </head>
 
-<body>
+<body style="background-color: #1A2933; color: white;">
   <div style="display:flex;">
     <div style="width:85vw;height:99.5vh;">
       <h1>Informations sur les gains et sur les dépenses</h1>
@@ -60,15 +60,18 @@
               <td></td>
             </tr>
           </table>
-
-          <label for="timespan" class="dpy-block">Afficher jusqu'à il y a:</label>
-          <select name="timespan" id="timespan">
-            <option value="day">1 jour</option>
-            <option value="month" selected>1 mois</option>
-            <option value="6month">6 mois</option>
-            <option value="year">1 an</option>
-            <option value="all">Depuis le début</option>
-          </select>
+          <form class="pure-form pure-form-stacked">
+            <fieldset>
+              <label for="timespan" class="dpy-block">Afficher jusqu'à il y a:</label>
+              <select class="" name="timespan" id="timespan">
+                <option value="day">1 jour</option>
+                <option value="month" selected>1 mois</option>
+                <option value="6month">6 mois</option>
+                <option value="year">1 an</option>
+                <option value="all">Depuis le début</option>
+              </select>
+            </fieldset>
+          </form>
         </div>
 
         <div id="chartContainer" style="width: 50%;" hidden>
@@ -78,9 +81,9 @@
     </div>
 
     <div style="width:15vw;height:99.5vh;" class="bills-panel">
-      <img src="bill-placeholder.PNG" />
-      <button class="btn btn-default" onclick="window.location.href='billsManager.html'">Ouvrir le gestionnaire de
-        factures</button>
+      <img src="src/budget_logo.svg" />
+      <button class="pure-button pure-button-primary"
+        onclick="window.location.href='billsManager.html'">Factures</button>
     </div>
   </div>
 
