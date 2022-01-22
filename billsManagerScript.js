@@ -45,6 +45,19 @@ $('#btn-newBill').on('click', () => {
 $('#btn-paid').on('click', () => {
     selectedBill.paid = true;
 
+    if (selectedBill.monthly) {
+        const newDate = new Date(selectedBill.date);
+        newDate.setMonth(newDate.getMonth()+1);
+        bills.push(new Bill(
+            selectedBill.category,
+            selectedBill.name,
+            newDate,
+            selectedBill.value,
+            true,
+            false
+        ));
+    }
+
     console.log("Bill paid...");
     pythonipc(function (_) { }, "bills", ["save", username], billsToJson(bills));
     populateLists(bills);
@@ -54,7 +67,6 @@ function tab1press() {
     if (!Tab1Pressed) {
         tab1button.toggleClass("active");
         tab2button.toggleClass("active");
-        btnPaid.removeAttr("disabled");
 
         // Hide whole page
         tab1.removeClass("invisible");
@@ -69,7 +81,6 @@ function tab2press() {
     if (!Tab2Pressed) {
         tab1button.toggleClass("active");
         tab2button.toggleClass("active");
-        btnPaid.attr("disabled", "");
 
         // Hide whole page
         tab1.addClass("invisible");
@@ -114,12 +125,31 @@ function valToDate(val) {
  * @param {Bill} bill 
  */
 function showInfos(bill, t) {
+    $("#txt-showName").removeAttr("readonly");
+    $("#txt-showCategory").removeAttr("disabled");
+    $("#txt-showCategory").removeAttr("readonly");
+    $("#txt-showDate").removeAttr("readonly");
+    $("#cbx-showMonthly").removeAttr("disabled");
+    $("#txt-showValue").removeAttr("readonly");
+    $("#btn-savechanges").removeAttr("disabled");
+    btnPaid.removeAttr("disabled");
+
+    if (bill.paid) {
+        $("#txt-showName").attr("readonly", "");
+        $("#txt-showCategory").attr("disabled", "");
+        $("#txt-showCategory").attr("readonly", "")
+        $("#txt-showDate").attr("readonly", "");
+        $("#cbx-showMonthly").attr("disabled", "");
+        $("#txt-showValue").attr("readonly", "");
+        $("#btn-savechanges").attr("disabled", "");
+        btnPaid.attr("disabled", "");
+    }
+
     $("#txt-showName").val(bill.name);
     $("#txt-showCategory").val(bill.category);
     $("#txt-showDate").val(dateToVal(bill.date));
     $("#cbx-showMonthly")[0].checked = bill.monthly;
     $("#txt-showValue").val(bill.value * -1);
-    $("#btn-savechanges").removeAttr("disabled");
     selectedBill = bill;
     if (selectedButton) {
         selectedButton.removeClass("selected");
@@ -140,6 +170,10 @@ function populateLists(bills) {
     $("#txt-showDate").val("");
     $("#cbx-showMonthly")[0].checked = false;
     $("#txt-showValue").val(0);
+
+    bills.sort(function(a, b) {
+        return a.date - b.date;
+    });
 
     bills.forEach(function (bill) {
         let billButton = $("<button class=\"pure-button \">");
