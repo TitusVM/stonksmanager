@@ -15,12 +15,13 @@ class Transaction:
       return self.name
 
   def __init__(self, description: str, date: datetime, amount: Decimal,
-               category: Category, is_monthly=False):
+               category: Category, is_monthly=False, is_paid=False):
     self._description = description
     self._date = date
     self._amount = amount
     self._category = category
     self._is_monthly = is_monthly
+    self._is_paid = is_paid
 
   @property
   def amount(self):
@@ -46,11 +47,16 @@ class Transaction:
   def is_monthly(self):
     return self._is_monthly
 
+  @property
+  def is_paid(self):
+    return self._is_paid
+
   def _asdict(self):
     return {
       "description": self._description,
       "date": self._date.isoformat(),
       "amount": self._amount,
       "category": self._category.name,
-      "is_monthly": self._is_monthly
+      "is_monthly": self._is_monthly,
+      "is_paid": self._is_paid
     }

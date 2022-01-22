@@ -76,13 +76,18 @@ def load_bills(user: str) -> List[Transaction]:
     amount = t["amount"]
     category = Transaction.Category[t["category"]]
     is_monthly = t["is_monthly"]
+    try:
+      is_paid = t["is_paid"]
+    except:
+      is_paid = False
 
     transactions.append(Transaction(
       description,
       date,
       amount,
       category,
-      is_monthly))
+      is_monthly,
+      is_paid))
   
   return transactions
 

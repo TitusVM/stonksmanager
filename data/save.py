@@ -17,7 +17,8 @@ def save_bills(user: str, json_object: list):
       datetime.datetime.fromisoformat(t["date"]),
       t["amount"],
       Transaction.Category[t["category"]],
-      t["is_monthly"]
+      t["is_monthly"],
+      t["is_paid"]
     ))
 
   json.dump(transactions, open(filepath, "w"), use_decimal=True, indent='  ')

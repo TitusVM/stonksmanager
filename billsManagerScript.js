@@ -155,12 +155,18 @@ function populateLists(bills) {
         }
     });
 
-    if (tab2.children().length == 0) {
+    const nToPay = tab1.children().length;
+    const nPaid = tab2.children().length;
+
+    if (nPaid == 0) {
         tab2.append("<p style=\"color:white;\">Rien à afficher...</p>");
+        tab1button.trigger("click");
     }
-    if (tab1.children().length == 0) {
+    if (nToPay == 0) {
+        if (nPaid != 0) {
+            tab2button.trigger("click");
+        }
         tab1.append("<p style=\"color:white;\">Rien à afficher...</p>");
-        tab2button.trigger("click");
     }
 }
 
@@ -175,7 +181,8 @@ function billsToJson(bills) {
             "date": b.date.toISOString().split("Z")[0],
             "amount": b.value,
             "category": b.category,
-            "is_monthly": b.monthly
+            "is_monthly": b.monthly,
+            "is_paid": b.paid
         };
         json.push(obj);
     });

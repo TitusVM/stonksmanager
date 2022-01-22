@@ -51,7 +51,7 @@ export class Bill {
         new Date(el.date),
         el.amount,
         el.is_monthly,
-        el.paid
+        el.is_paid
       ));
     });
     return array;
