@@ -1,151 +1,151 @@
 [
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-01T06:19:00",
-    "amount": -5.60,
+    "date": "2021-12-01T04:19:00",
+    "amount": -5.6,
     "category": "FOOD",
     "is_monthly": false,
-    "is_paid": false
+    "is_paid": true
   },
   {
     "description": "THEATRE",
-    "date": "2021-12-01T14:26:00",
-    "amount": -30.30,
+    "date": "2021-12-01T12:26:00",
+    "amount": -30.3,
     "category": "LEISURE",
     "is_monthly": false,
-    "is_paid": false
+    "is_paid": true
   },
   {
     "description": "AGENCE IMMOBILIERE",
-    "date": "2021-12-02T00:00:00",
-    "amount": -1500.00,
+    "date": "2021-12-01T22:00:00",
+    "amount": -1500,
     "category": "NECESSITY",
     "is_monthly": false,
-    "is_paid": false
+    "is_paid": true
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-02T06:24:00",
+    "date": "2021-12-02T04:24:00",
     "amount": -5.73,
     "category": "FOOD",
     "is_monthly": false,
-    "is_paid": false
+    "is_paid": true
   },
   {
     "description": "MUSEE",
-    "date": "2021-12-02T19:06:00",
+    "date": "2021-12-02T17:06:00",
     "amount": -32.79,
     "category": "LEISURE",
     "is_monthly": false,
-    "is_paid": false
+    "is_paid": true
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-03T06:21:00",
+    "date": "2021-12-03T04:21:00",
     "amount": -5.27,
     "category": "FOOD",
     "is_monthly": false,
-    "is_paid": false
+    "is_paid": true
   },
   {
     "description": "STATION ESSENCE",
-    "date": "2021-12-03T10:57:00",
+    "date": "2021-12-03T08:57:00",
     "amount": -77.68,
     "category": "TRANSPORTATION",
     "is_monthly": false,
-    "is_paid": false
-  },
-  {
-    "description": "BOULANGERIE",
-    "date": "2021-12-06T06:32:00",
-    "amount": -4.45,
-    "category": "FOOD",
-    "is_monthly": false,
-    "is_paid": false
+    "is_paid": true
   },
   {
     "description": "MAGASIN",
-    "date": "2021-12-04T12:02:00",
+    "date": "2021-12-04T10:02:00",
     "amount": -35.11,
     "category": "TRANSPORTATION",
     "is_monthly": false,
-    "is_paid": false
-  },
-  {
-    "description": "BOULANGERIE",
-    "date": "2021-12-06T06:28:00",
-    "amount": -3.96,
-    "category": "FOOD",
-    "is_monthly": false,
-    "is_paid": false
+    "is_paid": true
   },
   {
     "description": "MAGASIN",
-    "date": "2021-12-05T15:05:00",
+    "date": "2021-12-05T13:05:00",
     "amount": -197.59,
     "category": "TRANSPORTATION",
     "is_monthly": false,
-    "is_paid": false
+    "is_paid": true
   },
   {
     "description": "STATION ESSENCE",
-    "date": "2021-12-05T16:49:00",
+    "date": "2021-12-05T14:49:00",
     "amount": -43.34,
     "category": "TRANSPORTATION",
     "is_monthly": false,
-    "is_paid": false
+    "is_paid": true
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-06T06:11:00",
+    "date": "2021-12-06T04:11:00",
     "amount": -2.85,
     "category": "FOOD",
     "is_monthly": false,
-    "is_paid": false
+    "is_paid": true
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-07T06:39:00",
+    "date": "2021-12-06T04:28:00",
+    "amount": -3.96,
+    "category": "FOOD",
+    "is_monthly": false,
+    "is_paid": true
+  },
+  {
+    "description": "BOULANGERIE",
+    "date": "2021-12-06T04:32:00",
+    "amount": -4.45,
+    "category": "FOOD",
+    "is_monthly": false,
+    "is_paid": true
+  },
+  {
+    "description": "BOULANGERIE",
+    "date": "2021-12-07T04:39:00",
     "amount": -2.89,
     "category": "FOOD",
     "is_monthly": false,
-    "is_paid": false
+    "is_paid": true
   },
   {
     "description": "RESTAURANT",
-    "date": "2021-12-07T11:56:00",
-    "amount": -39.50,
+    "date": "2021-12-07T09:56:00",
+    "amount": -39.5,
     "category": "FOOD",
     "is_monthly": false,
-    "is_paid": false
+    "is_paid": true
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-08T06:40:00",
+    "date": "2021-12-08T04:40:00",
     "amount": -5.48,
     "category": "FOOD",
     "is_monthly": false,
-    "is_paid": false
+    "is_paid": true
   },
   {
     "description": "SUPERMARCHE",
-    "date": "2021-12-08T12:33:00",
+    "date": "2021-12-08T10:33:00",
     "amount": -185.47,
     "category": "FOOD",
     "is_monthly": false,
-    "is_paid": false
+    "is_paid": true
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-09T06:17:00",
-    "amount": -3.40,
+    "date": "2021-12-09T04:17:00",
+    "amount": -3.4,
     "category": "FOOD",
     "is_monthly": false,
     "is_paid": false
   },
   {
     "description": "RESTAURANT",
-    "date": "2021-12-09T10:07:00",
+    "date": "2021-12-09T08:07:00",
     "amount": -143.49,
     "category": "FOOD",
     "is_monthly": false,
@@ -153,31 +153,15 @@
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-10T06:14:00",
+    "date": "2021-12-10T04:14:00",
     "amount": -4.71,
     "category": "FOOD",
     "is_monthly": false,
     "is_paid": false
   },
   {
-    "description": "BOULANGERIE",
-    "date": "2021-12-13T06:40:00",
-    "amount": -4.26,
-    "category": "FOOD",
-    "is_monthly": false,
-    "is_paid": false
-  },
-  {
-    "description": "BOULANGERIE",
-    "date": "2021-12-13T06:23:00",
-    "amount": -2.87,
-    "category": "FOOD",
-    "is_monthly": false,
-    "is_paid": false
-  },
-  {
     "description": "MAGASIN JEUX",
-    "date": "2021-12-12T13:30:00",
+    "date": "2021-12-12T11:30:00",
     "amount": -40.86,
     "category": "TRANSPORTATION",
     "is_monthly": false,
@@ -185,7 +169,23 @@
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-13T06:40:00",
+    "date": "2021-12-13T04:23:00",
+    "amount": -2.87,
+    "category": "FOOD",
+    "is_monthly": false,
+    "is_paid": false
+  },
+  {
+    "description": "BOULANGERIE",
+    "date": "2021-12-13T04:40:00",
+    "amount": -4.26,
+    "category": "FOOD",
+    "is_monthly": false,
+    "is_paid": false
+  },
+  {
+    "description": "BOULANGERIE",
+    "date": "2021-12-13T04:40:00",
     "amount": -3.69,
     "category": "FOOD",
     "is_monthly": false,
@@ -193,7 +193,7 @@
   },
   {
     "description": "MAGASIN",
-    "date": "2021-12-13T11:45:00",
+    "date": "2021-12-13T09:45:00",
     "amount": -18.09,
     "category": "TRANSPORTATION",
     "is_monthly": false,
@@ -201,7 +201,7 @@
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-14T06:34:00",
+    "date": "2021-12-14T04:34:00",
     "amount": -4.73,
     "category": "FOOD",
     "is_monthly": false,
@@ -209,7 +209,7 @@
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-15T06:23:00",
+    "date": "2021-12-15T04:23:00",
     "amount": -2.94,
     "category": "FOOD",
     "is_monthly": false,
@@ -217,7 +217,7 @@
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-16T06:38:00",
+    "date": "2021-12-16T04:38:00",
     "amount": -5.83,
     "category": "FOOD",
     "is_monthly": false,
@@ -225,15 +225,15 @@
   },
   {
     "description": "SUPERMARCHE",
-    "date": "2021-12-16T16:13:00",
-    "amount": -42.00,
+    "date": "2021-12-16T14:13:00",
+    "amount": -42,
     "category": "FOOD",
     "is_monthly": false,
     "is_paid": false
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-17T06:34:00",
+    "date": "2021-12-17T04:34:00",
     "amount": -5.51,
     "category": "FOOD",
     "is_monthly": false,
@@ -241,63 +241,63 @@
   },
   {
     "description": "RESTAURANT",
-    "date": "2021-12-17T15:46:00",
+    "date": "2021-12-17T13:46:00",
     "amount": -41.88,
     "category": "FOOD",
     "is_monthly": false,
     "is_paid": false
   },
   {
-    "description": "BOULANGERIE",
-    "date": "2021-12-20T06:31:00",
-    "amount": -3.63,
-    "category": "FOOD",
-    "is_monthly": false,
-    "is_paid": false
-  },
-  {
     "description": "STATION ESSENCE",
-    "date": "2021-12-18T21:36:00",
+    "date": "2021-12-18T19:36:00",
     "amount": -87.86,
     "category": "TRANSPORTATION",
     "is_monthly": false,
     "is_paid": false
   },
   {
-    "description": "BOULANGERIE",
-    "date": "2021-12-20T06:32:00",
-    "amount": -4.60,
-    "category": "FOOD",
-    "is_monthly": false,
-    "is_paid": false
-  },
-  {
     "description": "ASSURANCE MOTO",
-    "date": "2021-12-20T00:00:00",
-    "amount": -420.00,
+    "date": "2021-12-19T22:00:00",
+    "amount": -420,
     "category": "NECESSITY",
     "is_monthly": false,
     "is_paid": false
   },
   {
     "description": "ASSURANCE VOITURE",
-    "date": "2021-12-20T00:00:00",
-    "amount": -420.00,
+    "date": "2021-12-19T22:00:00",
+    "amount": -420,
     "category": "NECESSITY",
     "is_monthly": false,
     "is_paid": false
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-20T06:15:00",
+    "date": "2021-12-20T04:15:00",
     "amount": -3.55,
     "category": "FOOD",
     "is_monthly": false,
     "is_paid": false
   },
   {
+    "description": "BOULANGERIE",
+    "date": "2021-12-20T04:31:00",
+    "amount": -3.63,
+    "category": "FOOD",
+    "is_monthly": false,
+    "is_paid": false
+  },
+  {
+    "description": "BOULANGERIE",
+    "date": "2021-12-20T04:32:00",
+    "amount": -4.6,
+    "category": "FOOD",
+    "is_monthly": false,
+    "is_paid": false
+  },
+  {
     "description": "MUSEE",
-    "date": "2021-12-20T17:57:00",
+    "date": "2021-12-20T15:57:00",
     "amount": -50.22,
     "category": "LEISURE",
     "is_monthly": false,
@@ -305,7 +305,7 @@
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-21T06:34:00",
+    "date": "2021-12-21T04:34:00",
     "amount": -2.94,
     "category": "FOOD",
     "is_monthly": false,
@@ -313,7 +313,7 @@
   },
   {
     "description": "MAGASIN ENLIGNE JEUXVIDEOS",
-    "date": "2021-12-21T14:22:00",
+    "date": "2021-12-21T12:22:00",
     "amount": -52.36,
     "category": "TRANSPORTATION",
     "is_monthly": false,
@@ -321,7 +321,7 @@
   },
   {
     "description": "TICKET CFF",
-    "date": "2021-12-21T15:17:00",
+    "date": "2021-12-21T13:17:00",
     "amount": -85.03,
     "category": "TRANSPORTATION",
     "is_monthly": false,
@@ -329,7 +329,7 @@
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-22T06:18:00",
+    "date": "2021-12-22T04:18:00",
     "amount": -3.98,
     "category": "FOOD",
     "is_monthly": false,
@@ -337,7 +337,7 @@
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-23T06:30:00",
+    "date": "2021-12-23T04:30:00",
     "amount": -2.64,
     "category": "FOOD",
     "is_monthly": false,
@@ -345,7 +345,7 @@
   },
   {
     "description": "MAGASIN ENLIGNE JEUXVIDEOS",
-    "date": "2021-12-23T14:28:00",
+    "date": "2021-12-23T12:28:00",
     "amount": -42.63,
     "category": "TRANSPORTATION",
     "is_monthly": false,
@@ -353,7 +353,7 @@
   },
   {
     "description": "TICKET CFF",
-    "date": "2021-12-23T18:45:00",
+    "date": "2021-12-23T16:45:00",
     "amount": -57.11,
     "category": "TRANSPORTATION",
     "is_monthly": false,
@@ -361,7 +361,7 @@
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-24T06:10:00",
+    "date": "2021-12-24T04:10:00",
     "amount": -2.97,
     "category": "FOOD",
     "is_monthly": false,
@@ -369,31 +369,15 @@
   },
   {
     "description": "SUPERMARCHE",
-    "date": "2021-12-24T11:34:00",
-    "amount": -35.20,
-    "category": "FOOD",
-    "is_monthly": false,
-    "is_paid": false
-  },
-  {
-    "description": "BOULANGERIE",
-    "date": "2021-12-27T06:25:00",
-    "amount": -3.13,
-    "category": "FOOD",
-    "is_monthly": false,
-    "is_paid": false
-  },
-  {
-    "description": "BOULANGERIE",
-    "date": "2021-12-27T06:34:00",
-    "amount": -2.39,
+    "date": "2021-12-24T09:34:00",
+    "amount": -35.2,
     "category": "FOOD",
     "is_monthly": false,
     "is_paid": false
   },
   {
     "description": "MUSEE",
-    "date": "2021-12-26T17:12:00",
+    "date": "2021-12-26T15:12:00",
     "amount": -54.03,
     "category": "LEISURE",
     "is_monthly": false,
@@ -401,7 +385,23 @@
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-27T06:36:00",
+    "date": "2021-12-27T04:25:00",
+    "amount": -3.13,
+    "category": "FOOD",
+    "is_monthly": false,
+    "is_paid": false
+  },
+  {
+    "description": "BOULANGERIE",
+    "date": "2021-12-27T04:34:00",
+    "amount": -2.39,
+    "category": "FOOD",
+    "is_monthly": false,
+    "is_paid": false
+  },
+  {
+    "description": "BOULANGERIE",
+    "date": "2021-12-27T04:36:00",
     "amount": -3.94,
     "category": "FOOD",
     "is_monthly": false,
@@ -409,7 +409,7 @@
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-28T06:26:00",
+    "date": "2021-12-28T04:26:00",
     "amount": -5.42,
     "category": "FOOD",
     "is_monthly": false,
@@ -417,7 +417,7 @@
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-29T06:36:00",
+    "date": "2021-12-29T04:36:00",
     "amount": -5.63,
     "category": "FOOD",
     "is_monthly": false,
@@ -425,7 +425,7 @@
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-30T06:19:00",
+    "date": "2021-12-30T04:19:00",
     "amount": -2.39,
     "category": "FOOD",
     "is_monthly": false,
@@ -433,7 +433,7 @@
   },
   {
     "description": "STATION ESSENCE",
-    "date": "2021-12-30T10:29:00",
+    "date": "2021-12-30T08:29:00",
     "amount": -56.68,
     "category": "TRANSPORTATION",
     "is_monthly": false,
@@ -441,7 +441,7 @@
   },
   {
     "description": "ASSURANCE MALADIE",
-    "date": "2021-12-31T00:01:00",
+    "date": "2021-12-30T22:01:00",
     "amount": -412.63,
     "category": "NECESSITY",
     "is_monthly": false,
@@ -449,7 +449,7 @@
   },
   {
     "description": "BOULANGERIE",
-    "date": "2021-12-31T06:37:00",
+    "date": "2021-12-31T04:37:00",
     "amount": -2.45,
     "category": "FOOD",
     "is_monthly": false,
@@ -457,7 +457,7 @@
   },
   {
     "description": "TELECOM",
-    "date": "2021-12-31T10:01:00",
+    "date": "2021-12-31T08:01:00",
     "amount": -68.23,
     "category": "HOUSING",
     "is_monthly": false,
@@ -465,10 +465,18 @@
   },
   {
     "description": "TRAVAIL",
-    "date": "2021-12-31T10:32:00",
-    "amount": 6000.00,
+    "date": "2021-12-31T08:32:00",
+    "amount": 6000,
     "category": "NECESSITY",
     "is_monthly": false,
     "is_paid": false
+  },
+  {
+    "description": "LOYER",
+    "date": "2022-01-22T23:00:00",
+    "amount": -1500,
+    "category": "HOUSING",
+    "is_monthly": false,
+    "is_paid": true
   }
 ]
