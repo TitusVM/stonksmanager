@@ -22,7 +22,7 @@ function loginKeyPress() {
         let data = fs.readFileSync(filename, 'utf8').split('\n');
 
         data.forEach((authorities, index) => {
-            let [user, password] = authorities.split(',');
+            let [user, password] = authorities.replace('\r', '').split(',');
             let usr = user.split(':')[1].trim();
             let pass = password.split(':')[1].trim();
 

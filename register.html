@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login</title>
+    <title>Créer un compte</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
         integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
@@ -24,11 +24,15 @@
                     <fieldset>
                         <div class="pure-control-group">
                             <label for="aligned-name" style="color: whitesmoke;">Nom d'utilisateur</label>
-                            <input type="text" id="txtUsr" value="luan" />
+                            <input type="text" id="txtUsr" required />
                         </div>
                         <div class="pure-control-group">
                             <label for="aligned-password" style="color: whitesmoke;">Mot de passe</label>
-                            <input type="password" id="txtPwd" value="123" />
+                            <input type="password" id="txtPwd" required />
+                        </div>
+                        <div class="pure-control-group">
+                            <label for="alignes-password" style="color: whitesmoke;">Répéter le mot de passe</label>
+                            <input type="password" id="txtRepeat" required />
                         </div>
                         <div class="error">
                             <style scoped="">
@@ -41,19 +45,16 @@
                             <span id="lbl">&shy;</span>
                         </div>
 
-                        <div class="pure-controls" style="display: flex;">
-                            <button style="width: 100%; margin-right: 2px;" type="button" class="pure-button pure-button-primary" id="btn-login">Se connecter</button>
-                            <button style="width: 100%; margin-left: 2px;" type="button" class="pure-button pure-button-secondary" id="btn-quit">Quitter</button>
-                        </div>
-                        <div class="pure-controls" style="margin-top: 3px;">
-                            <button style="width: 100%;" type="button" class="pure-button pure-button-secondary" onclick="document.location.href='register.html'">Créer un compte</button>
+                        <div class="pure-controls">
+                            <button type="button" class="pure-button pure-button-primary" id="btn-register">Créer le compte</button>
+                            <button type="button" class="pure-button pure-button-secondary" onclick="document.location.href='login.html'">Retour</button>
                         </div>
                     </fieldset>
                 </form>
             </div>
         </div>
     </div>
-    <script src="loginScript.js"></script>
+    <script src="registerScript.js"></script>
 </body>
 
 </html>
