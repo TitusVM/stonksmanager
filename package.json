@@ -13,13 +13,15 @@
   "author": "pckurdu",
   "license": "ISC",
   "dependencies": {
+    "jquery": "^3.6.0",
     "chart.js": "^3.7.0",
     "electron": "^15.3.5",
     "python-shell": "^3.0.1"
   },
   "devDependencies": {
-    "chart.js": "^3.7.0",
+    "chart.js": "^3.6.2",
     "electron": "^15.3.5",
+    "electron-tabs": "^0.15.0",
     "jsdom": "^19.0.0",
     "python-shell": "^3.0.1"
   }
