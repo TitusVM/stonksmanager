@@ -62,7 +62,7 @@ def load_example_data(filepath: str) -> List[Transaction]:
   return transactions
 
 def load_bills(user: str) -> List[Transaction]:
-  path = "example_jsons/"  # TODO: change this (and in save.py)
+  path = os.path.join(os.getcwd(), "example_jsons/")
   filepath = os.path.join(path, "bills_" + user + ".json")
   if not os.path.exists(filepath):
     return []

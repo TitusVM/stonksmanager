@@ -7,7 +7,7 @@ from transaction import Transaction
 from typing import List
 
 def save_bills(user: str, json_object: list):
-  path = "example_jsons/"  # TODO: change this (and in loading.py)
+  path = os.path.join(os.getcwd(), "example_jsons/")
   filepath = os.path.join(path, "bills_" + user + ".json")
 
   transactions: List[Transaction] = []
